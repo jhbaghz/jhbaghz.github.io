@@ -1,61 +1,68 @@
 <!DOCTYPE html>
 <html lang="en">
-header{
-    background:#154088;
-    color:#fff;
-    padding:16px 20px;
-    position: relative;
-}
-.header-wrap{
-    max-width:1200px;
-    margin:0 auto;
-    position: relative;
-    display:flex;
-    align-items:center;
-    height:100%;
-}
-.logo{
-    font-size:36px;
-    font-weight:bold;
-    white-space:nowrap;
-    position: relative;
-    z-index:2;
-}
-/* 导航：整条蓝色栏正中间 */
-nav{
-    position: absolute;
-    left: 50%;
-    transform: translateX(-50%);
-    display:flex;
-    gap:72px;
-}
-nav a{
-    color:#ff4444;
-    text-decoration:none;
-    font-size:24px;
-}
-nav a:hover{
-    text-decoration:underline;
-}
-.lang-box{
-    margin-left:auto;
-    display:flex;
-    gap:8px;
-    position: relative;
-    z-index:2;
-}
-.lang-box button{
-    padding:6px 12px;
-    border:none;
-    border-radius:3px;
-    cursor:pointer;
-    font-size:20px;
-    color:#ff4444;
-    background:transparent;
-}
-.lang-box button:hover{
-    text-decoration:underline;        }
-        /* ========= 下面全部是你原来的样式，不动 ========= */
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JHBAG | Bag Manufacturer</title>
+    <style>
+        *{margin:0;padding:0;box-sizing:border-box;font-family:Arial,sans-serif}
+        /* ========= 头部样式【最终版】 ========= */
+        header{
+            background:#154088;
+            color:#fff;
+            padding:16px 20px;
+            position: relative;
+        }
+        .header-wrap{
+            max-width:1200px;
+            margin:0 auto;
+            position: relative;
+            display:flex;
+            align-items:center;
+            height:100%;
+        }
+        .logo{
+            font-size:36px;
+            font-weight:bold;
+            white-space:nowrap;
+            position: relative;
+            z-index:2;
+        }
+        nav{
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            display:flex;
+            gap:72px;
+        }
+        nav a{
+            color:#ffffff;
+            text-decoration:none;
+            font-size:24px;
+        }
+        nav a:hover{
+            text-decoration:underline;
+        }
+        .lang-box{
+            margin-left:auto;
+            display:flex;
+            gap:8px;
+            position: relative;
+            z-index:2;
+        }
+        .lang-box button{
+            padding:6px 12px;
+            border:none;
+            border-radius:3px;
+            cursor:pointer;
+            font-size:20px;
+            color:#ffffff;
+            background:transparent;
+        }
+        .lang-box button:hover{
+            text-decoration:underline;
+        }
+        /* ========= 页面通用样式 ========= */
         .page-block{display:none;padding:40px 20px;max-width:1200px;margin:0 auto}
         .page-block.active{display:block}
         .product-layout{display:grid;grid-template-columns:220px 1fr;gap:30px;max-width:1200px;margin:40px auto;padding:0 20px}
@@ -67,7 +74,7 @@ nav a:hover{
         .item-card{border:1px solid #eee;border-radius:6px;overflow:hidden}
         .item-card img{width:100%;height:180px;object-fit:cover;cursor:zoom-in}
         .item-card p{padding:10px;text-align:center;font-weight:bold}
-        /* ===== 详情弹窗样式（新版，带参数文字） ===== */
+        /* ===== 详情弹窗样式 ===== */
         .lightbox{
             position:fixed;top:0;left:0;width:100%;height:100%;
             background:rgba(0,0,0,0.85);
@@ -124,7 +131,8 @@ nav a:hover{
             <button onclick="setLang('jp')">日本語</button>
         </div>
     </div>
-</header><!-- HOME -->
+</header>
+<!-- HOME -->
 <div id="home" class="page-block active">
     <section class="section">
         <h2 class="en">Custom Bag Manufacturer</h2>
@@ -211,20 +219,20 @@ nav a:hover{
             </div>
             <!-- Tote Style A -->
             <div class="item-card" data-cat="tote"
-                 data-img="images/tote-a-01.jpg"
+                 data-img="https://via.placeholder.com/400x220/e8e8e8?text=Tote+Bag+Style+A"
                  data-name="Tote Bag Style A"
                  data-en-info="Material: PU leather<br>Size: L40 × H32 × D12 cm<br>Custom Logo: Deboss / Print / Embroidery available"
                  data-jp-info="素材：PUレザー<br>サイズ：L40 × H32 × D12 cm<br>ロゴ：箔押し、プリント、刺繍対応">
-                <img src="images/tote-a-01.jpg" alt="Tote Bag Style A" onclick="openLightbox(this)">
+                <img src="https://via.placeholder.com/400x220/e8e8e8?text=Tote+Bag+Style+A" alt="Tote Bag Style A" onclick="openLightbox(this)">
                 <p>Tote Bag Style A</p>
             </div>
             <!-- Tote Style B -->
             <div class="item-card" data-cat="tote"
-                 data-img="images/tote-b-01.jpg"
+                 data-img="https://via.placeholder.com/400x220/e8e8e8?text=Tote+Bag+Style+B"
                  data-name="Tote Bag Style B"
                  data-en-info="Material: PU leather<br>Size: L36 × H28 × D10 cm<br>Custom Logo: Deboss / Print / Metal logo available"
                  data-jp-info="素材：PUレザー<br>サイズ：L36 × H28 × D10 cm<br>ロゴ：箔押し、プリント、メタルロゴ対応">
-                <img src="images/tote-b-01.jpg" alt="Tote Bag Style B" onclick="openLightbox(this)">
+                <img src="https://via.placeholder.com/400x220/e8e8e8?text=Tote+Bag+Style+B" alt="Tote Bag Style B" onclick="openLightbox(this)">
                 <p>Tote Bag Style B</p>
             </div>
             <!-- Beach Tote -->
@@ -257,7 +265,7 @@ nav a:hover{
         <p class="jp">メール：your@jhbag.com.cn</p>
     </section>
 </div>
-<!-- 新版弹窗：大图 + 参数详情 -->
+<!-- 弹窗 -->
 <div class="lightbox" id="lightbox">
     <div class="lightbox-content">
         <span class="close">&times;</span>
@@ -274,12 +282,10 @@ nav a:hover{
 </div>
 <script>
 let currentLang = 'en';
-// 页面切换
 function switchPage(id){
     document.querySelectorAll('.page-block').forEach(el=>el.classList.remove('active'))
     document.getElementById(id).classList.add('active')
 }
-// 语言切换
 function setLang(lang){
     currentLang = lang;
     if(lang=='en'){
@@ -291,7 +297,6 @@ function setLang(lang){
     }
 }
 setLang('en');
-// 分类筛选
 function filterCat(catName){
     const cards=document.querySelectorAll('.item-card')
     cards.forEach(card=>{
@@ -302,7 +307,6 @@ function filterCat(catName){
         }
     })
 }
-// ========== 新版弹窗逻辑 ==========
 const lb = document.getElementById('lightbox');
 const lbImg = document.getElementById('lbImg');
 const lbName = document.getElementById('lbName');
@@ -321,12 +325,10 @@ function openLightbox(imgEl){
 function closeLightbox(){
     lb.classList.remove('show');
 }
-// 关闭按钮
 document.querySelector('.close').onclick = closeLightbox;
-// 点击弹窗空白区域关闭
 lb.onclick = function(e){
     if(e.target === lb) closeLightbox();
 }
 </script>
 </body>
-</html>h
+</html>
