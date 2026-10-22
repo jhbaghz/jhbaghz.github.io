@@ -7,9 +7,9 @@
 <style>
 *{margin:0;padding:0;box-sizing:border-box;font-family:Arial,sans-serif}
 body {
-    padding-bottom: 60px; /* 预留空间，内容不会被footer遮挡 */
+    padding-bottom: 60px; /* 预留空间，内容不会被固定footer遮挡 */
 }
-/* ========= 头部样式【最终版】 ========= */
+/* ========= 头部样式 ========= */
 header{
 background:#154088;
 color:#fff;
@@ -105,16 +105,20 @@ display:grid;grid-template-columns:1fr 1fr;gap:24px;align-items:start
 .lb-img{width:100%;max-height:400px;object-fit:contain}
 .lb-info h3{margin-bottom:16px;font-size:20px}
 .lb-info p{margin:6px 0;font-size:15px;line-height:1.6}
-/* ========= 首页 Banner【图片完整显示，不裁切左右】 ========= */
+
+/* =========【重点】Banner 背景cover模式 ========= */
 .hero-banner{
 width:100%;
+height: 400px;
+min-height: 340px;
+background-image: url("images/banner-factory.jpg");
+background-size: cover;
+background-position: center top;
+background-repeat: no-repeat;
 position:relative;
-overflow:hidden;
-}
-.hero-banner img{
-width:100%;
-height:auto;
-display:block;
+display:flex;
+align-items:center;
+justify-content:center;
 }
 .hero-overlay{
 position:absolute;
@@ -122,10 +126,7 @@ inset:0;
 background:rgba(0,0,0,0.4);
 }
 .hero-text-wrap{
-position:absolute;
-top:50%;
-left:50%;
-transform:translate(-50%,-50%);
+position:relative;
 z-index:2;
 text-align:center;
 color:#fff;
@@ -134,15 +135,29 @@ width:100%;
 max-width:1100px;
 }
 .hero-text-wrap h2{
-font-size:42px;
-margin-bottom:18px;
+font-size:36px;
+margin-bottom:16px;
 line-height:1.3;
 }
 .hero-text-wrap p{
-font-size:20px;
+font-size:18px;
 line-height:1.7;
 margin:8px 0;
 }
+/* 手机端适配 */
+@media (max-width: 768px){
+.hero-banner{
+height:280px;
+min-height:240px;
+}
+.hero-text-wrap h2{
+font-size:24px;
+}
+.hero-text-wrap p{
+font-size:15px;
+}
+}
+
 /* ========= About 图文布局 ========= */
 .about-row{
 display:grid;
@@ -195,7 +210,7 @@ text-decoration:underline;
 
 <div id="home" class="page-block active" style="padding:0;">
 <section class="hero-banner">
-<img src="images/banner-factory.jpg" alt="bag factory">
+<!-- ❗这里已经删掉img标签，用CSS背景图 -->
 <div class="hero-overlay"></div>
 <div class="hero-text-wrap">
 <h2 class="en">Specialize in OEM custom bags & corporate gift bag projects.</h2>
@@ -283,7 +298,7 @@ text-decoration:underline;
 <img src="https://via.placeholder.com/400x220/e8e8e8?text=Canvas+Tote" alt="Canvas Tote" onclick="openLightbox(this)">
 <p>Canvas Tote GR20260108</p>
 </div>
-<div class="item-card" data-cat="tote" data-img="images/tote-a-01.jpg" data-name="Tote Bag Style A" data-en-info="Material: PU leather<br>Size: L40 × H32 × D12 cm<br>Custom Logo: Deboss / Print / Embroidery available" data-jp-info="素材：PUレザー<br>サイズ：L40 × H32 × D12 cm<br>ロゴ：箔押し、プリント、刺繍対応">
+<div class="item-card" data-cat="tote" data-img="images/tote-a-01.jpg" data-name="Tote Bag Style A" data-en-info="Material: PU leather<br>Size: L40 × H32 × D12 cm<br>Custom Logo: Deboss / Print / Embroidery available" data-jp-info="素材：PUレザー<br>サイズ：L40 × H32 × D10 cm<br>ロゴ：箔押し、プリント、刺繍対応">
 <img src="images/tote-a-01.jpg" alt="Tote Bag Style A" onclick="openLightbox(this)">
 <p>Tote Bag Style A</p>
 </div>
