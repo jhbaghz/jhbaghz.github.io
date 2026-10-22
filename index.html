@@ -1,334 +1,385 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>JHBAG | Bag Manufacturer</title>
-    <style>
-        *{margin:0;padding:0;box-sizing:border-box;font-family:Arial,sans-serif}
-        /* ========= 头部样式【最终版】 ========= */
-        header{
-            background:#154088;
-            color:#fff;
-            padding:16px 20px;
-            position: relative;
-        }
-        .header-wrap{
-            max-width:1200px;
-            margin:0 auto;
-            position: relative;
-            display:flex;
-            align-items:center;
-            height:100%;
-        }
-        .logo{
-            font-size:36px;
-            font-weight:bold;
-            white-space:nowrap;
-            position: relative;
-            z-index:2;
-        }
-        nav{
-            position: absolute;
-            left: 50%;
-            transform: translateX(-50%);
-            display:flex;
-            gap:72px;
-        }
-        nav a{
-            color:#ffffff;
-            text-decoration:none;
-            font-size:24px;
-        }
-        nav a:hover{
-            text-decoration:underline;
-        }
-        .lang-box{
-            margin-left:auto;
-            display:flex;
-            gap:8px;
-            position: relative;
-            z-index:2;
-        }
-        .lang-box button{
-            padding:6px 12px;
-            border:none;
-            border-radius:3px;
-            cursor:pointer;
-            font-size:20px;
-            color:#ffffff;
-            background:transparent;
-        }
-        .lang-box button:hover{
-            text-decoration:underline;
-        }
-        /* ========= 页面通用样式 ========= */
-        .page-block{display:none;padding:40px 20px;max-width:1200px;margin:0 auto}
-        .page-block.active{display:block}
-        .product-layout{display:grid;grid-template-columns:220px 1fr;gap:30px;max-width:1200px;margin:40px auto;padding:0 20px}
-        .sidebar h4{font-size:20px;margin-bottom:16px}
-        .sidebar ul{list-style:none}
-        .sidebar li{padding:8px 0;cursor:pointer;color:#222}
-        .sidebar li:hover{color:#154088;font-weight:bold}
-        .grid-wrap{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:24px}
-        .item-card{border:1px solid #eee;border-radius:6px;overflow:hidden}
-        .item-card img{width:100%;height:180px;object-fit:cover;cursor:zoom-in}
-        .item-card p{padding:10px;text-align:center;font-weight:bold}
-        /* ===== 详情弹窗样式 ===== */
-        .lightbox{
-            position:fixed;top:0;left:0;width:100%;height:100%;
-            background:rgba(0,0,0,0.85);
-            display:none;align-items:center;justify-content:center;
-            z-index:9999;padding:20px;
-            overflow:auto
-        }
-        .lightbox.show{display:flex}
-        .lightbox-content{
-            background:#fff;
-            max-width:800px;
-            width:100%;
-            border-radius:6px;
-            padding:24px;
-            position:relative
-        }
-        .lightbox .close{
-            position:absolute;top:12px;right:16px;
-            color:#222;font-size:32px;cursor:pointer;
-            z-index:10
-        }
-        .lb-row{
-            display:grid;grid-template-columns:1fr 1fr;gap:24px;align-items:start
-        }
-        .lb-img{width:100%;max-height:400px;object-fit:contain}
-        .lb-info h3{margin-bottom:16px;font-size:20px}
-        .lb-info p{margin:6px 0;font-size:15px;line-height:1.6}
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>JHBAG | Bag Manufacturer</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box;font-family:Arial,sans-serif}
+body {
+    padding-bottom: 60px; /* 预留空间，内容不会被footer遮挡 */
+}
+/* ========= 头部样式【最终版】 ========= */
+header{
+background:#154088;
+color:#fff;
+padding:16px 20px;
+position: relative;
+}
+.header-wrap{
+max-width:1200px;
+margin:0 auto;
+position: relative;
+display:flex;
+align-items:center;
+height:100%;
+}
+.logo{
+font-size:36px;
+font-weight:bold;
+white-space:nowrap;
+position: relative;
+z-index:2;
+}
+nav{
+position: absolute;
+left: 50%;
+transform: translateX(-50%);
+display:flex;
+gap:72px;
+}
+nav a{
+color:#ffffff;
+text-decoration:none;
+font-size:24px;
+}
+nav a:hover{
+text-decoration:underline;
+}
+.lang-box{
+margin-left:auto;
+display:flex;
+gap:8px;
+position: relative;
+z-index:2;
+}
+.lang-box button{
+padding:6px 12px;
+border:none;
+border-radius:3px;
+cursor:pointer;
+font-size:20px;
+color:#ffffff;
+background:transparent;
+}
+.lang-box button:hover{
+text-decoration:underline;
+}
+/* ========= 页面通用样式 ========= */
+.page-block{display:none;padding:40px 20px;max-width:1200px;margin:0 auto}
+.page-block.active{display:block}
+.product-layout{display:grid;grid-template-columns:220px 1fr;gap:30px;max-width:1200px;margin:40px auto;padding:0 20px}
+.sidebar h4{font-size:20px;margin-bottom:16px}
+.sidebar ul{list-style:none}
+.sidebar li{padding:8px 0;cursor:pointer;color:#222}
+.sidebar li:hover{color:#154088;font-weight:bold}
+.grid-wrap{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:24px}
+.item-card{border:1px solid #eee;border-radius:6px;overflow:hidden}
+.item-card img{width:100%;height:180px;object-fit:cover;cursor:zoom-in}
+.item-card p{padding:10px;text-align:center;font-weight:bold}
+/* ===== 详情弹窗样式 ===== */
+.lightbox{
+position:fixed;top:0;left:0;width:100%;height:100%;
+background:rgba(0,0,0,0.85);
+display:none;align-items:center;justify-content:center;
+z-index:9999;padding:20px;
+overflow:auto
+}
+.lightbox.show{display:flex}
+.lightbox-content{
+background:#fff;
+max-width:800px;
+width:100%;
+border-radius:6px;
+padding:24px;
+position:relative
+}
+.lightbox .close{
+position:absolute;top:12px;right:16px;
+color:#222;font-size:32px;cursor:pointer;
+z-index:10
+}
+.lb-row{
+display:grid;grid-template-columns:1fr 1fr;gap:24px;align-items:start
+}
+.lb-img{width:100%;max-height:400px;object-fit:contain}
+.lb-info h3{margin-bottom:16px;font-size:20px}
+.lb-info p{margin:6px 0;font-size:15px;line-height:1.6}
+/* ========= 首页 Banner【图片完整显示，不裁切左右】 ========= */
+.hero-banner{
+width:100%;
+position:relative;
+overflow:hidden;
+}
+.hero-banner img{
+width:100%;
+height:auto;
+display:block;
+}
+.hero-overlay{
+position:absolute;
+inset:0;
+background:rgba(0,0,0,0.4);
+}
+.hero-text-wrap{
+position:absolute;
+top:50%;
+left:50%;
+transform:translate(-50%,-50%);
+z-index:2;
+text-align:center;
+color:#fff;
+padding:0 20px;
+width:100%;
+max-width:1100px;
+}
+.hero-text-wrap h2{
+font-size:42px;
+margin-bottom:18px;
+line-height:1.3;
+}
+.hero-text-wrap p{
+font-size:20px;
+line-height:1.7;
+margin:8px 0;
+}
+/* ========= About 图文布局 ========= */
+.about-row{
+display:grid;
+grid-template-columns: 1fr 1fr;
+gap:32px;
+align-items:center;
+}
+.about-row img{
+width:100%;
+border-radius:6px;
+}
+/* ========= 底部版权 Footer：固定在屏幕底部 ========= */
+footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background:#154088;
+    color:#fff;
+    text-align:center;
+    padding:12px 16px;
+    font-size:14px;
+    z-index: 100;
+}
+footer a {
+color:#fff;
+text-decoration:none;
+}
+footer a:hover {
+text-decoration:underline;
+}
+</style>
 </head>
 <body>
 <header>
-    <div class="header-wrap">
-        <div class="logo">JHBAG</div>
-        <nav>
-            <a href="#home" onclick="switchPage('home')">
-                <span class="en">Home</span>
-                <span class="jp">ホーム</span>
-            </a>
-            <a href="#about" onclick="switchPage('about')">
-                <span class="en">About</span>
-                <span class="jp">会社概要</span>
-            </a>
-            <a href="#product" onclick="switchPage('product')">
-                <span class="en">Product</span>
-                <span class="jp">製品</span>
-            </a>
-            <a href="#contact" onclick="switchPage('contact')">
-                <span class="en">Contact</span>
-                <span class="jp">お問い合わせ</span>
-            </a>
-        </nav>
-        <div class="lang-box">
-            <button onclick="setLang('en')">EN</button>
-            <button onclick="setLang('jp')">日本語</button>
-        </div>
-    </div>
+<div class="header-wrap">
+<div class="logo">JHBAG</div>
+<nav>
+<a href="#home" onclick="switchPage('home')">Home</a>
+<a href="#about" onclick="switchPage('about')">About</a>
+<a href="#product" onclick="switchPage('product')">Product</a>
+<a href="#contact" onclick="switchPage('contact')">Contact</a>
+</nav>
+<div class="lang-box">
+<button onclick="setLang('en')">EN</button>
+<button onclick="setLang('jp')">日本語</button>
+</div>
+</div>
 </header>
-<!-- HOME -->
-<div id="home" class="page-block active">
-    <section class="section">
-        <h2 class="en">Custom Bag Manufacturer</h2>
-        <h2 class="jp">オリジナルバッグ製造メーカー</h2>
-        <p class="en">We are professional OEM & ODM bag factory, support custom tote, backpack, ladies bag, cosmetic pouch. Welcome your custom design.</p>
-        <p class="jp">OEM・ODM対応のバッグ工場です。トートバッグ、リュック、レディースバッグ、ポーチなど、デザインのカスタマイズが可能です。</p>
-    </section>
+
+<div id="home" class="page-block active" style="padding:0;">
+<section class="hero-banner">
+<img src="images/banner-factory.jpg" alt="bag factory">
+<div class="hero-overlay"></div>
+<div class="hero-text-wrap">
+<h2 class="en">Specialize in OEM custom bags & corporate gift bag projects.</h2>
+<h2 class="jp">OEM オリジナルバッグ・ノベルティバッグ専門メーカー</h2>
+<p class="en">Leading handbag and corporate gift bag supplier in China, over 15 years experience</p>
+<p class="jp">中国のハンドバッグ・ギフトバッグサプライヤー、15 年以上の実績</p>
+<p class="en">One-stop service for all your branding needs: Sampling → Bulk order<br>Provide Inspection Report | On-time Delivery</p>
+<p class="jp">ブランド向けワンストップサービス：サンプル作成→量産<br>検品レポート提供、納期厳守</p>
 </div>
-<!-- ABOUT -->
+</section>
+</div>
+
 <div id="about" class="page-block">
-    <section class="section">
-        <h2 class="en">About Us</h2>
-        <h2 class="jp">会社概要</h2>
-        <p class="en">With rich experience in bag development and production, we serve buyers from Japan, Middle East and Southeast Asia. Strict quality control & on-time delivery.</p>
-        <p class="jp">バッグ開発・生産の豊富な実績。日本、中東、東南アジアのお客様を中心に、品質管理、納期管理を徹底しています。</p>
-    </section>
+<div class="about-row">
+<div>
+<img src="images/about-factory.jpg" alt="bag factory">
 </div>
-<!-- PRODUCT -->
+<div>
+<h2 class="en">About Us</h2>
+<h2 class="jp">会社概要</h2>
+<p class="en">With rich experience in bag development and production, we serve buyers from Japan, Middle East and Southeast Asia. Strict quality control & on-time delivery. We support OEM & ODM custom bags, sampling, bulk production and inspection report.</p>
+<p class="jp">バッグ開発・生産の豊富な実績。日本、中東、東南アジアのバイヤー様向けに、厳格な品質管理、安定した納期を提供。OEM/ODM 対応、サンプル、量産、検品レポート発行可能です。</p>
+</div>
+</div>
+</div>
+
 <div id="product" class="page-block">
-    <div class="product-layout">
-        <aside class="sidebar">
-            <h4 class="en">Check By</h4>
-            <h4 class="jp">カテゴリ</h4>
-            <ul>
-                <li onclick="filterCat('all')">
-                    <span class="en">All</span>
-                    <span class="jp">すべて</span>
-                </li>
-                <li onclick="filterCat('canvas')">
-                    <span class="en">Canvas Tote</span>
-                    <span class="jp">キャンバストート</span>
-                </li>
-                <li onclick="filterCat('travel')">
-                    <span class="en">Travel Goods & Packing cubes</span>
-                    <span class="jp">トラベルグッズ</span>
-                </li>
-                <li onclick="filterCat('beach')">
-                    <span class="en">Beach Tote</span>
-                    <span class="jp">ビーチトート</span>
-                </li>
-                <li onclick="filterCat('tote')">
-                    <span class="en">Tote Bag</span>
-                    <span class="jp">トートバッグ</span>
-                </li>
-                <li onclick="filterCat('charm')">
-                    <span class="en">Bag Charm</span>
-                    <span class="jp">バッグチャーム</span>
-                </li>
-                <li onclick="filterCat('women')">
-                    <span class="en">Women's Bag</span>
-                    <span class="jp">レディースバッグ</span>
-                </li>
-                <li onclick="filterCat('sleeve')">
-                    <span class="en">Laptop Sleeve</span>
-                    <span class="jp">ラップトップスリーブ</span>
-                </li>
-                <li onclick="filterCat('backpack')">
-                    <span class="en">Laptop Backpack</span>
-                    <span class="jp">リュックサック</span>
-                </li>
-                <li onclick="filterCat('sport')">
-                    <span class="en">Sport Bag</span>
-                    <span class="jp">スポーツバッグ</span>
-                </li>
-                <li onclick="filterCat('raffia')">
-                    <span class="en">Raffia Bag</span>
-                    <span class="jp">ラフィアバッグ</span>
-                </li>
-                <li onclick="filterCat('crossbody')">
-                    <span class="en">Phone Crossbody</span>
-                    <span class="jp">スマホショルダー</span>
-                </li>
-            </ul>
-        </aside>
-        <div class="grid-wrap">
-            <!-- Canvas Tote -->
-            <div class="item-card" data-cat="canvas"
-                 data-img="https://via.placeholder.com/400x220/e8e8e8?text=Canvas+Tote"
-                 data-name="Canvas Tote GR20260108"
-                 data-en-info="Materials: 16oz cotton canvas<br>Lining: No<br>Hardware: No<br>Size (cm): L32 × H38 (Handle Drop:25cm)<br>Long strap: No<br>Pocket: No<br>Weight:0.35kg<br>Accept customized logo: Yes, deboss / print / metal / embroidery / laser logo"
-                 data-jp-info="素材：16ozコットンキャンバス<br>裏地：無し<br>金具：無し<br>サイズ(cm)：L32 × H38（持ち手25cm）<br>ショルダー紐：無し<br>ポケット：無し<br>重さ：0.35kg<br>ロゴカスタマイズ可能：箔押し、プリント、メタルロゴ、刺繍、レーザー刻印">
-                <img src="https://via.placeholder.com/400x220/e8e8e8?text=Canvas+Tote" alt="Canvas Tote" onclick="openLightbox(this)">
-                <p>Canvas Tote GR20260108</p>
-            </div>
-           <!-- Tote Style A -->
-<div class="item-card" data-cat="tote"
-     data-img="images/tote-a-01.jpg"
-     data-name="Tote Bag Style A"
-     data-en-info="Material: PU leather<br>Size: L40 × H32 × D12 cm<br>Custom Logo: Deboss / Print / Embroidery available"
-     data-jp-info="素材：PUレザー<br>サイズ：L40 × H32 × D12 cm<br>ロゴ：箔押し、プリント、刺繍対応">
-    <img src="images/tote-a-01.jpg" alt="Tote Bag Style A" onclick="openLightbox(this)">
-    <p>Tote Bag Style A</p>
+<div class="product-layout">
+<aside class="sidebar">
+<h4 class="en">Check By</h4>
+<h4 class="jp">カテゴリ</h4>
+<ul>
+<li onclick="filterCat('all')">
+<span class="en">All</span>
+<span class="jp">すべて</span>
+</li>
+<li onclick="filterCat('canvas')">
+<span class="en">Canvas Tote</span>
+<span class="jp">キャンバストート</span>
+</li>
+<li onclick="filterCat('travel')">
+<span class="en">Travel Goods & Packing cubes</span>
+<span class="jp">トラベルグッズ</span>
+</li>
+<li onclick="filterCat('beach')">
+<span class="en">Beach Tote</span>
+<span class="jp">ビーチトート</span>
+</li>
+<li onclick="filterCat('tote')">
+<span class="en">Tote Bag</span>
+<span class="jp">トートバッグ</span>
+</li>
+<li onclick="filterCat('charm')">
+<span class="en">Bag Charm</span>
+<span class="jp">バッグチャーム</span>
+</li>
+<li onclick="filterCat('women')">
+<span class="en">Women's Bag</span>
+<span class="jp">レディースバッグ</span>
+</li>
+<li onclick="filterCat('sleeve')">
+<span class="en">Laptop Sleeve</span>
+<span class="jp">ラップトップスリーブ</span>
+</li>
+<li onclick="filterCat('backpack')">
+<span class="en">Laptop Backpack</span>
+<span class="jp">リュックサック</span>
+</li>
+<li onclick="filterCat('sport')">
+<span class="en">Sport Bag</span>
+<span class="jp">スポーツバッグ</span>
+</li>
+<li onclick="filterCat('raffia')">
+<span class="en">Raffia Bag</span>
+<span class="jp">ラフィアバッグ</span>
+</li>
+<li onclick="filterCat('crossbody')">
+<span class="en">Phone Crossbody</span>
+<span class="jp">スマホショルダー</span>
+</li>
+</ul>
+</aside>
+<div class="grid-wrap">
+<div class="item-card" data-cat="canvas" data-img="https://via.placeholder.com/400x220/e8e8e8?text=Canvas+Tote" data-name="Canvas Tote GR20260108" data-en-info="Materials: 16oz cotton canvas<br>Lining: No<br>Hardware: No<br>Size (cm): L32 × H38 (Handle Drop:25cm)<br>Long strap: No<br>Pocket: No<br>Weight:0.35kg<br>Accept customized logo: Yes, deboss / print / metal / embroidery / laser logo" data-jp-info="素材：16ozコットンキャンバス<br>裏地：無し<br>金具：無し<br>サイズ(cm)：L32 × H38（持ち手25cm）<br>ショルダー紐：無し<br>ポケット：無し<br>重さ：0.35kg<br>ロゴカスタマイズ可能：箔押し、プリント、メタルロゴ、刺繍、レーザー刻印">
+<img src="https://via.placeholder.com/400x220/e8e8e8?text=Canvas+Tote" alt="Canvas Tote" onclick="openLightbox(this)">
+<p>Canvas Tote GR20260108</p>
 </div>
-           <!-- Tote Style B -->
-<div class="item-card" data-cat="tote"
-     data-img="images/tote-b-01.jpg"
-     data-name="Tote Bag Style B"
-     data-en-info="Material: PU leather<br>Size: L36 × H28 × D10 cm<br>Custom Logo: Deboss / Print / Metal logo available"
-     data-jp-info="素材：PUレザー<br>サイズ：L36 × H28 × D10 cm<br>ロゴ：箔押し、プリント、メタルロゴ対応">
-    <img src="images/tote-b-01.jpg" alt="Tote Bag Style B" onclick="openLightbox(this)">
-    <p>Tote Bag Style B</p>
+<div class="item-card" data-cat="tote" data-img="images/tote-a-01.jpg" data-name="Tote Bag Style A" data-en-info="Material: PU leather<br>Size: L40 × H32 × D12 cm<br>Custom Logo: Deboss / Print / Embroidery available" data-jp-info="素材：PUレザー<br>サイズ：L40 × H32 × D12 cm<br>ロゴ：箔押し、プリント、刺繍対応">
+<img src="images/tote-a-01.jpg" alt="Tote Bag Style A" onclick="openLightbox(this)">
+<p>Tote Bag Style A</p>
 </div>
-            <!-- Beach Tote -->
-            <div class="item-card" data-cat="beach"
-                 data-img="https://via.placeholder.com/400x220/e8e8e8?text=Beach+Tote"
-                 data-name="Beach Tote"
-                 data-en-info="Material: Raffia / Canvas<br>Suitable for seaside vacation<br>Custom logo support"
-                 data-jp-info="素材：ラフィア / キャンバス<br>ビーチ向け<br>ロゴカスタマイズ可能">
-                <img src="https://via.placeholder.com/400x220/e8e8e8?text=Beach+Tote" alt="Beach Tote" onclick="openLightbox(this)">
-                <p>Beach Tote</p>
-            </div>
-            <!-- Backpack -->
-            <div class="item-card" data-cat="backpack"
-                 data-img="https://via.placeholder.com/400x220/e8e8e8?text=Laptop+Backpack"
-                 data-name="Laptop Backpack"
-                 data-en-info="Material: 600D polyester<br>Fit for 14/15.6 inch laptop<br>Multiple pockets"
-                 data-jp-info="素材：600Dポリエステル<br>14/15.6インチPC対応<br>複数ポケット">
-                <img src="https://via.placeholder.com/400x220/e8e8e8?text=Laptop+Backpack" alt="Laptop Backpack" onclick="openLightbox(this)">
-                <p>Laptop Backpack</p>
-            </div>
-        </div>
-    </div>
+<div class="item-card" data-cat="tote" data-img="images/tote-b-01.jpg" data-name="Tote Bag Style B" data-en-info="Material: PU leather<br>Size: L36 × H28 × D10 cm<br>Custom Logo: Deboss / Print / Metal logo available" data-jp-info="素材：PUレザー<br>サイズ：L36 × H28 × D10 cm<br>ロゴ：箔押し、プリント、メタルロゴ対応">
+<img src="images/tote-b-01.jpg" alt="Tote Bag Style B" onclick="openLightbox(this)">
+<p>Tote Bag Style B</p>
 </div>
-<!-- CONTACT -->
+<div class="item-card" data-cat="beach" data-img="https://via.placeholder.com/400x220/e8e8e8?text=Beach+Tote" data-name="Beach Tote" data-en-info="Material: Raffia / Canvas<br>Suitable for seaside vacation<br>Custom logo support" data-jp-info="素材：ラフィア / キャンバス<br>ビーチ向け<br>ロゴカスタマイズ可能">
+<img src="https://via.placeholder.com/400x220/e8e8e8?text=Beach+Tote" alt="Beach Tote" onclick="openLightbox(this)">
+<p>Beach Tote</p>
+</div>
+<div class="item-card" data-cat="backpack" data-img="https://via.placeholder.com/400x220/e8e8e8?text=Laptop+Backpack" data-name="Laptop Backpack" data-en-info="Material: 600D polyester<br>Fit for 14/15.6 inch laptop<br>Multiple pockets" data-jp-info="素材：600Dポリエステル<br>14/15.6インチPC対応<br>複数ポケット">
+<img src="https://via.placeholder.com/400x220/e8e8e8?text=Laptop+Backpack" alt="Laptop Backpack" onclick="openLightbox(this)">
+<p>Laptop Backpack</p>
+</div>
+</div>
+</div>
+</div>
+
 <div id="contact" class="page-block">
-    <section class="section">
-        <h2 class="en">Contact Us</h2>
-        <h2 class="jp">お問い合わせ</h2>
-        <p class="en">Email: your@jhbag.com.cn</p>
-        <p class="jp">メール：your@jhbag.com.cn</p>
-    </section>
+<section class="section">
+<h2 class="en">Contact Us</h2>
+<h2 class="jp">お問い合わせ</h2>
+<p class="en">Email: your@jhbag.com.cn</p>
+<p class="jp">メール：your@jhbag.com.cn</p>
+</section>
 </div>
-<!-- 弹窗 -->
+
 <div class="lightbox" id="lightbox">
-    <div class="lightbox-content">
-        <span class="close">&times;</span>
-        <div class="lb-row">
-            <div>
-                <img class="lb-img" id="lbImg" src="" alt="preview">
-            </div>
-            <div class="lb-info">
-                <h3 id="lbName"></h3>
-                <div id="lbText"></div>
-            </div>
-        </div>
-    </div>
+<div class="lightbox-content">
+<span class="close">&times;</span>
+<div class="lb-row">
+<div>
+<img class="lb-img" id="lbImg" src="" alt="preview">
 </div>
+<div class="lb-info">
+<h3 id="lbName"></h3>
+<div id="lbText"></div>
+</div>
+</div>
+</div>
+</div>
+
 <script>
 let currentLang = 'en';
 function switchPage(id){
-    document.querySelectorAll('.page-block').forEach(el=>el.classList.remove('active'))
-    document.getElementById(id).classList.add('active')
+document.querySelectorAll('.page-block').forEach(el=>el.classList.remove('active'))
+document.getElementById(id).classList.add('active')
 }
 function setLang(lang){
-    currentLang = lang;
-    if(lang=='en'){
-        document.querySelectorAll('.jp').forEach(el=>el.style.display='none')
-        document.querySelectorAll('.en').forEach(el=>el.style.display='block')
-    }else{
-        document.querySelectorAll('.en').forEach(el=>el.style.display='none')
-        document.querySelectorAll('.jp').forEach(el=>el.style.display='block')
-    }
+currentLang = lang;
+if(lang=='en'){
+document.querySelectorAll('.jp').forEach(el=>el.style.display='none')
+document.querySelectorAll('.en').forEach(el=>el.style.display='block')
+}else{
+document.querySelectorAll('.en').forEach(el=>el.style.display='none')
+document.querySelectorAll('.jp').forEach(el=>el.style.display='block')
+}
 }
 setLang('en');
 function filterCat(catName){
-    const cards=document.querySelectorAll('.item-card')
-    cards.forEach(card=>{
-        if(catName==='all' || card.dataset.cat===catName){
-            card.style.display='block'
-        }else{
-            card.style.display='none'
-        }
-    })
+const cards=document.querySelectorAll('.item-card')
+cards.forEach(card=>{
+if(catName==='all' || card.dataset.cat===catName){
+card.style.display='block'
+}else{
+card.style.display='none'
+}
+})
 }
 const lb = document.getElementById('lightbox');
 const lbImg = document.getElementById('lbImg');
 const lbName = document.getElementById('lbName');
 const lbText = document.getElementById('lbText');
 function openLightbox(imgEl){
-    const card = imgEl.closest('.item-card');
-    lbImg.src = card.dataset.img;
-    lbName.innerText = card.dataset.name;
-    if(currentLang === 'en'){
-        lbText.innerHTML = card.dataset.enInfo;
-    }else{
-        lbText.innerHTML = card.dataset.jpInfo;
-    }
-    lb.classList.add('show');
+const card = imgEl.closest('.item-card');
+lbImg.src = card.dataset.img;
+lbName.innerText = card.dataset.name;
+if(currentLang === 'en'){
+lbText.innerHTML = card.dataset.enInfo;
+}else{
+lbText.innerHTML = card.dataset.jpInfo;
+}
+lb.classList.add('show');
 }
 function closeLightbox(){
-    lb.classList.remove('show');
+lb.classList.remove('show');
 }
 document.querySelector('.close').onclick = closeLightbox;
 lb.onclick = function(e){
-    if(e.target === lb) closeLightbox();
+if(e.target === lb) closeLightbox();
 }
 </script>
+
+<footer>
+© 2026 JHBAG. All rights reserved. <a href="https://jhbag.com.cn">jhbag.com.cn</a>
+</footer>
 </body>
 </html>
