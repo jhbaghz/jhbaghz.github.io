@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>JHBAG | Bag Manufacturer</title>
+<meta name="description" content="OEM ODM custom bag factory from China, tote bag, backpack, ladies bags">
+<style>
+*{margin:0;padding:0;box-sizing:border-box;font-family:Arial,Helvetica,sans-serif}
+:root{
+  --nav-blue:#19407c;
+  --gold:#d4af37;
+  --text:#222;
+  --light-bg:#f6f9fc;
+  --hover:#19407c;
+}
+body{background:#fff;color:var(--text);line-height:1.6}
+.container{max-width:1280px;margin:0 auto;padding:0 20px}
+
+/* 顶部导航 */
+header{background:var(--nav-blue);color:#fff;position:sticky;top:0;z-index:999}
+.header-wrap{display:flex;justify-content:space-between;align-items:center;padding:16px 0}
+.logo{font-size:24px;font-weight:bold;letter-spacing:1px}
+nav.top-nav ul{display:flex;gap:36px;list-style:none}
+nav.top-nav a{color:#fff;text-decoration:none;font-size:16px}
+nav.top-nav a:hover{color:var(--gold)}
+.header-right{display:flex;gap:10px;align-items:center}
+.lang-btn{padding:5px 10px;border:none;border-radius:3px;cursor:pointer}
+
+/* 页面布局：侧边栏 + 产品区 */
+.product-layout{display:grid;grid-template-columns:240px 1fr;gap:36px;padding:40px 20px;max-width:1280px;margin:0 auto}
+.sidebar{position:sticky;top:90px}
+.sidebar h4{font-size:20px;margin-bottom:18px;color:#222;font-weight:600}
+.sidebar ul{list-style:none}
+.sidebar li{padding:9px 0;font-size:15px;cursor:pointer;color:#444;transition:0.2s}
+.sidebar li.active,.sidebar li:hover{color:var(--hover);font-weight:500;padding-left:6px}
+
+/* 产品卡片网格 */
+.prod-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:24px}
+.prod-card{background:#fff;overflow:hidden}
+.prod-card img{width:100%;height:220px;object-fit:cover;background:#eee}
+.prod-card .info{padding:12px 4px}
+.prod-card .name{font-size:15px;margin-bottom:4px}
+.prod-card .sku{font-size:14px;color:#666}
+
+/* 其他板块（Home / About / Contact） */
+.section{padding:60px 20px;max-width:1000px;margin:0 auto}
+.section h2{font-size:28px;color:var(--nav-blue);margin-bottom:24px}
+.enquiry-block{background:var(--nav-blue);color:#fff;padding:60px 20px}
+footer{background:#0f2b54;color:#b9c5d8;text-align:center;padding:24px;font-size:14px}
+
+/* 双语控制 */
+.jp{display:none}
+
+/* 移动端适配：侧边栏到顶部 */
+@media(max-width:768px){
+  .product-layout{grid-template-columns:1fr;gap:24px}
+  .sidebar{position:static}
+  .header-wrap{flex-direction:column;gap:14px;padding:14px 0}
+  nav.top-nav ul{gap:20px}
+}
+
+/* 区块切换，默认只显示产品页，你后面可以自己加home/about内容 */
+.page-block{display:none}
+.page-block.active{display:block}
+</style>
+</head>
+<body>
+<header>
+  <div class="container header-wrap">
+    <div class="logo">JHBAG</div>
+    <nav class="top-nav">
+      <ul>
+        <li><a href="#home" onclick="switchPage('home')" class="en">Home</a><a href="#home" onclick="switchPage('home')" class="jp">ホーム</a></li>
+        <li><a href="#about" onclick="switchPage('about')" class="en">About</a><a href="#about" onclick="switchPage('about')" class="jp">会社概要</a></li>
+        <li><a href="#product" onclick="switchPage('product')" class="en">Product</a><a href="#product" onclick="switchPage('product')" class="jp">製品</a></li>
+        <li><a href="#contact" onclick="switchPage('contact')" class="en">Contact</a><a href="#contact" onclick="switchPage('contact')" class="jp">お問い合わせ</a></li>
+      </ul>
+    </nav>
+    <div class="header-right">
+      <button class="lang-btn" onclick="switchLang('en')">EN</button>
+      <button class="lang-btn" onclick="switchLang('jp')">日本語</button>
+    </div>
+  </div>
+</header>
+
+<!-- HOME页面 -->
+<div id="home" class="page-block">
+  <section class="section">
+    <h2 class="en">Custom Bag Manufacturer</h2>
+    <h2 class="jp">オリジナルバッグ製造メーカー</h2>
+    <p class="en">We are professional OEM & ODM bag factory, support custom tote, backpack, ladies bag, cosmetic pouch. Welcome your custom design.</p>
+    <p class="jp">OEM/ODM対応のバッグ工場です。トートバッグ、リュック、レディースバッグ、ポーチなど、デザインのカスタマイズが可能です。</p>
+  </section>
+</div>
+
+<!-- ABOUT页面 -->
+<div id="about" class="page-block">
+  <section class="section">
+    <h2 class="en">About Us</h2>
+    <h2 class="jp">会社概要</h2>
+    <p class="en">With rich experience in bag development and production, we serve buyers from Japan, Middle East and Southeast Asia. Strict quality control & on-time delivery.</p>
+    <p class="jp">バッグ開発・生産の豊富な実績。日本、中東、東南アジアのお客様を中心に、品質管理、納期管理を徹底しています。</p>
+  </section>
+</div>
+
+<!-- PRODUCT 产品页【重点，和截图布局一致：侧边Check By + 产品网格】 -->
+<div id="product" class="page-block active">
+  <div class="product-layout">
+    <aside class="sidebar">
+      <h4>Check By</h4>
+      <ul>
+        <li class="cat-item active" data-filter="all">All</li>
+        <li class="cat-item" data-filter="canvas">Canvas Tote</li>
+        <li class="cat-item" data-filter="travel">Travel Goods & Packing cubes</li>
+        <li class="cat-item" data-filter="beach">Beach Tote</li>
+        <li class="cat-item" data-filter="tote">Tote Bag</li>
+        <li class="cat-item" data-filter="charm">Bag Charm</li>
+        <li class="cat-item" data-filter="women">Women's Bag</li>
+        <li class="cat-item" data-filter="laptop">Laptop Sleeve</li>
+        <li class="cat-item" data-filter="backpack">Laptop Backpack</li>
+        <li class="cat-item" data-filter="sport">Sport Bag</li>
+        <li class="cat-item" data-filter="raffia">Raffia Bag</li>
+        <li class="cat-item" data-filter="cross">Phone Crossbody</li>
+        <li class="cat-item" data-filter="kid">Kid's Backpack</li>
+        <li class="cat-item" data-filter="dog">Dog Leash</li>
+        <li class="cat-item" data-filter="other">Uncategorized</li>
+      </ul>
+    </aside>
+    <main>
+      <div class="prod-grid">
+        <div class="prod-card" data-cat="beach tote">
+          <img src="https://via.placeholder.com/400x220/e8e8e8?text=Tote+Bag" alt="Tote">
+          <div class="info">
+            <div class="name en">Fly Kit Tote -Spring Holiday Stripe (L)</div>
+            <div class="name jp">スプリングストライプトート(L)</div>
+            <div class="sku">GR240047</div>
+          </div>
+        </div>
+        <div class="prod-card" data-cat="beach tote">
+          <img src="https://via.placeholder.com/400x220/e8e8e8?text=Fly+Knit+Tote" alt="Knit Tote">
+          <div class="info">
+            <div class="name en">Fly Knit Spring Holiday Stripe (M)</div>
+            <div class="name jp">ニットストライプトート(M)</div>
+            <div class="sku">GR240045</div>
+          </div>
+        </div>
+        <div class="prod-card" data-cat="tote">
+          <img src="https://via.placeholder.com/400x220/e8e8e8?text=Grid+Tote" alt="Grid Tote">
+          <div class="info">
+            <div class="name en">Fly Knit Tote (L)</div>
+            <div class="name jp">ニットトート(L)</div>
+            <div class="sku">GR240046</div>
+          </div>
+        </div>
+        <div class="prod-card" data-cat="tote">
+          <img src="https://via.placeholder.com/400x220/e8e8e8?text=Foldable+Tote" alt="Foldable">
+          <div class="info">
+            <div class="name en">Foldable Tote Bag</div>
+            <div class="name jp">折りたたみトートバッグ</div>
+            <div class="sku">GR20260136</div>
+          </div>
+        </div>
+        <div class="prod-card" data-cat="canvas">
+          <img src="https://via.placeholder.com/400x220/e8e8e8?text=Cotton+Linen+Tote" alt="Cotton Linen">
+          <div class="info">
+            <div class="name en">Cotton linen Tote Bag</div>
+            <div class="name jp">コットンリネントート</div>
+            <div class="sku">GR240085</div>
+          </div>
+        </div>
+      </div>
+    </main>
+  </div>
+</div>
+
+<!-- CONTACT页面 -->
+<div id="contact" class="page-block">
+  <section class="enquiry-block">
+    <div class="container">
+      <h2 class="en">Contact Us</h2>
+      <h2 class="jp">お問い合わせ</h2>
+      <p>Email: info@jhbag.com.cn</p>
+      <p class="en">WhatsApp: +86 138 0000 0000</p>
+      <p class="jp">WhatsApp：+86 138 0000 0000</p>
+      <p class="en">Factory: Guangdong, China</p>
+      <p class="jp">所在地：中国 広東省</p>
+    </div>
+  </section>
+</div>
+
+<footer>
+  <span class="en">© 2026 JHBAG All rights reserved.</span>
+  <span class="jp">© 2026 JHBAG 無断転載禁止</span>
+</footer>
+
+<script>
+// 页面切换 Home / About / Product / Contact
+function switchPage(pageId){
+  document.querySelectorAll('.page-block').forEach(b=>b.classList.remove('active'))
+  document.getElementById(pageId).classList.add('active')
+  window.scrollTo(0,0)
+}
+
+// 双语切换
+function switchLang(lang){
+  const en = document.querySelectorAll('.en');
+  const jp = document.querySelectorAll('.jp');
+  if(lang==='en'){
+    en.forEach(x=>x.style.display='block');
+    jp.forEach(x=>x.style.display='none');
+    document.documentElement.lang="en";
+  }else{
+    en.forEach(x=>x.style.display='none');
+    jp.forEach(x=>x.style.display='block');
+    document.documentElement.lang="ja";
+  }
+}
+switchLang("en");
+
+// 侧边分类筛选
+const catItems = document.querySelectorAll('.cat-item');
+const cards = document.querySelectorAll('.prod-card');
+catItems.forEach(item=>{
+  item.onclick = ()=>{
+    catItems.forEach(c=>c.classList.remove('active'))
+    item.classList.add('active')
+    let filter = item.dataset.filter
+    cards.forEach(card=>{
+      if(filter==='all' || card.dataset.cat.includes(filter)){
+        card.style.display="block"
+      }else{
+        card.style.display="none"
+      }
+    })
+  }
+})
+</script>
+</body>
+</html>
