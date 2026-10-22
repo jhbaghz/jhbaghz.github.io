@@ -50,10 +50,22 @@
 <header>
     <div class="logo">JHBAG</div>
     <nav>
-        <a href="#home" onclick="switchPage('home')">Home</a>
-        <a href="#about" onclick="switchPage('about')">About</a>
-        <a href="#product" onclick="switchPage('product')">Product</a>
-        <a href="#contact" onclick="switchPage('contact')">Contact</a>
+        <a href="#home" onclick="switchPage('home')">
+            <span class="en">Home</span>
+            <span class="jp">ホーム</span>
+        </a>
+        <a href="#about" onclick="switchPage('about')">
+            <span class="en">About</span>
+            <span class="jp">会社概要</span>
+        </a>
+        <a href="#product" onclick="switchPage('product')">
+            <span class="en">Product</span>
+            <span class="jp">製品</span>
+        </a>
+        <a href="#contact" onclick="switchPage('contact')">
+            <span class="en">Contact</span>
+            <span class="jp">お問い合わせ</span>
+        </a>
     </nav>
     <div class="lang-box">
         <button onclick="setLang('en')">EN</button>
@@ -82,20 +94,21 @@
 <div id="product" class="page-block">
     <div class="product-layout">
         <aside class="sidebar">
-            <h4>Check By</h4>
+            <h4 class="en">Check By</h4>
+            <h4 class="jp">カテゴリ</h4>
             <ul>
-                <li onclick="filterCat('all')">All</li>
-                <li onclick="filterCat('canvas')">Canvas Tote</li>
-                <li onclick="filterCat('travel')">Travel Goods & Packing cubes</li>
-                <li onclick="filterCat('beach')">Beach Tote</li>
-                <li onclick="filterCat('tote')">Tote Bag</li>
-                <li onclick="filterCat('charm')">Bag Charm</li>
-                <li onclick="filterCat('women')">Women's Bag</li>
-                <li onclick="filterCat('sleeve')">Laptop Sleeve</li>
-                <li onclick="filterCat('backpack')">Laptop Backpack</li>
-                <li onclick="filterCat('sport')">Sport Bag</li>
-                <li onclick="filterCat('raffia')">Raffia Bag</li>
-                <li onclick="filterCat('crossbody')">Phone Crossbody</li>
+                <li onclick="filterCat('all')">All / すべて</li>
+                <li onclick="filterCat('canvas')">Canvas Tote / キャンバストート</li>
+                <li onclick="filterCat('travel')">Travel Goods & Packing cubes / トラベルグッズ</li>
+                <li onclick="filterCat('beach')">Beach Tote / ビーチトート</li>
+                <li onclick="filterCat('tote')">Tote Bag / トートバッグ</li>
+                <li onclick="filterCat('charm')">Bag Charm / バッグチャーム</li>
+                <li onclick="filterCat('women')">Women's Bag / レディースバッグ</li>
+                <li onclick="filterCat('sleeve')">Laptop Sleeve / ラップトップスリーブ</li>
+                <li onclick="filterCat('backpack')">Laptop Backpack / リュックサック</li>
+                <li onclick="filterCat('sport')">Sport Bag / スポーツバッグ</li>
+                <li onclick="filterCat('raffia')">Raffia Bag / ラフィアバッグ</li>
+                <li onclick="filterCat('crossbody')">Phone Crossbody / スマホショルダー</li>
             </ul>
         </aside>
         <div class="grid-wrap">
@@ -107,7 +120,6 @@
                     Custom logo: Print / Embroidery / Deboss
                 </div>
             </div>
-
             <!-- Tote Style A -->
             <div class="item-card" data-cat="tote">
                 <img src="images/tote-a-01.jpg" alt="Tote Bag Style A" onclick="openLightbox(this.src)">
@@ -128,7 +140,6 @@
                     Custom Logo: Deboss / Print / Metal logo available
                 </div>
             </div>
-
             <div class="item-card" data-cat="beach">
                 <img src="https://via.placeholder.com/400x220/e8e8e8?text=Beach+Tote" alt="Beach Tote" onclick="openLightbox(this.src)">
                 <p>Beach Tote</p>
