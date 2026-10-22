@@ -206,26 +206,3 @@ document.querySelector('.close').onclick = closeLightbox;
 </script>
 </body>
 </html>
-```
-
-### ✔ 当前效果说明
-
-1. 图片可以点击放大（单张大图，没有多图轮播，符合你刚刚的要求）
-2. 每个卡片：图片 → 产品名称（加粗）→ 下方居中规格文字
-3. 侧边筛选正常，切换英文 / 日文正常
-4. tote-a-01.jpg、tote-b-01.jpg 对应两个托特款式，独立参数
-5. 其他占位产品我也顺带加上了示范描述，你可以直接修改
-
-### 📌 后续新增产品复制模板
-
-```
-<div class="item-card" data-cat="这里填分类">
-    <img src="images/xxx.jpg" alt="产品名字" onclick="openLightbox(this.src)">
-    <p>产品名称</p>
-    <div class="product-desc">
-        Material: xxx<br>
-        Size: xxx<br>
-        Custom Logo: xxx
-    </div>
-</div>
-```
