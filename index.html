@@ -6,12 +6,30 @@
     <title>JHBAG | Bag Manufacturer</title>
     <style>
         *{margin:0;padding:0;box-sizing:border-box;font-family:Arial,sans-serif}
-        header{background:#154088;color:#fff;text-align:center;padding:24px 16px}
-        .logo{font-size:32px;font-weight:bold;margin-bottom:16px}
-        nav a{color:#fff;text-decoration:none;margin:0 12px;font-size:18px}
+        /* ========= 新版头部样式 ========= */
+        header{background:#154088;color:#fff;padding:16px 30px}
+        .header-wrap{
+            max-width:1200px;
+            margin:0 auto;
+            display:flex;
+            justify-content:space-between;
+            align-items:flex-start;
+        }
+        .logo{font-size:32px;font-weight:bold}
+        .nav-area{
+            display:flex;
+            flex-direction:column;
+            align-items:flex-end;
+            gap:10px;
+        }
+        nav{
+            display:flex;
+            gap:36px;
+        }
+        nav a{color:#fff;text-decoration:none;font-size:18px}
         nav a:hover{text-decoration:underline}
-        .lang-box{margin-top:16px}
-        .lang-box button{padding:6px 12px;margin:0 4px;border:none;border-radius:3px;cursor:pointer}
+        .lang-box button{padding:6px 12px;margin-left:6px;border:none;border-radius:3px;cursor:pointer}
+        /* ========= 下面全部是你原来的样式，不动 ========= */
         .page-block{display:none;padding:40px 20px;max-width:1200px;margin:0 auto}
         .page-block.active{display:block}
         .product-layout{display:grid;grid-template-columns:220px 1fr;gap:30px;max-width:1200px;margin:40px auto;padding:0 20px}
@@ -55,28 +73,32 @@
 </head>
 <body>
 <header>
-    <div class="logo">JHBAG</div>
-    <nav>
-        <a href="#home" onclick="switchPage('home')">
-            <span class="en">Home</span>
-            <span class="jp">ホーム</span>
-        </a>
-        <a href="#about" onclick="switchPage('about')">
-            <span class="en">About</span>
-            <span class="jp">会社概要</span>
-        </a>
-        <a href="#product" onclick="switchPage('product')">
-            <span class="en">Product</span>
-            <span class="jp">製品</span>
-        </a>
-        <a href="#contact" onclick="switchPage('contact')">
-            <span class="en">Contact</span>
-            <span class="jp">お問い合わせ</span>
-        </a>
-    </nav>
-    <div class="lang-box">
-        <button onclick="setLang('en')">EN</button>
-        <button onclick="setLang('jp')">日本語</button>
+    <div class="header-wrap">
+        <div class="logo">JHBAG</div>
+        <div class="nav-area">
+            <nav>
+                <a href="#home" onclick="switchPage('home')">
+                    <span class="en">Home</span>
+                    <span class="jp">ホーム</span>
+                </a>
+                <a href="#about" onclick="switchPage('about')">
+                    <span class="en">About</span>
+                    <span class="jp">会社概要</span>
+                </a>
+                <a href="#product" onclick="switchPage('product')">
+                    <span class="en">Product</span>
+                    <span class="jp">製品</span>
+                </a>
+                <a href="#contact" onclick="switchPage('contact')">
+                    <span class="en">Contact</span>
+                    <span class="jp">お問い合わせ</span>
+                </a>
+            </nav>
+            <div class="lang-box">
+                <button onclick="setLang('en')">EN</button>
+                <button onclick="setLang('jp')">日本語</button>
+            </div>
+        </div>
     </div>
 </header>
 <!-- HOME -->
@@ -262,7 +284,6 @@ const lb = document.getElementById('lightbox');
 const lbImg = document.getElementById('lbImg');
 const lbName = document.getElementById('lbName');
 const lbText = document.getElementById('lbText');
-
 function openLightbox(imgEl){
     const card = imgEl.closest('.item-card');
     lbImg.src = card.dataset.img;
