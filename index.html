@@ -105,21 +105,20 @@ display:grid;grid-template-columns:1fr 1fr;gap:24px;align-items:start
 .lb-img{width:100%;max-height:400px;object-fit:contain}
 .lb-info h3{margin-bottom:16px;font-size:20px}
 .lb-info p{margin:6px 0;font-size:15px;line-height:1.6}
-
 /* =========【重点】Banner 背景cover模式 ========= */
 .hero-banner{
-width:100%;
-height: 400px;
-min-height: 340px;
-background-image: url("images/banner-factory.jpg");
-background-size: cover;
-background-position: center top;
-background-repeat: no-repeat;
-position:relative;
-display:flex;
-align-items:center;
-justify-content:center;
-}
+    width: 100vw;   /* 关键：视口100%宽度，不是父元素100% */
+    height: 360px;
+    min-height: 300px;
+    background-image: url("images/banner-factory.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    position:relative;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    margin-left: calc(-50vw + 50%); /* 向左拉，突破父容器居中限制 */}
 .hero-overlay{
 position:absolute;
 inset:0;
@@ -144,6 +143,93 @@ font-size:18px;
 line-height:1.7;
 margin:8px 0;
 }
+/* ====== 新增：优势卡片 ====== */
+.advantage-section{
+    max-width: 1200px;
+    margin: 60px auto;
+    padding: 0 20px;
+}
+.advantage-title{
+    text-align:center;
+    font-size:26px;
+    color:#154088;
+    margin-bottom:30px;
+}
+.adv-grid{
+    display:grid;
+    grid-template-columns: repeat(4,1fr);
+    gap:24px;
+}
+.adv-card{
+    border:1px solid #eee;
+    padding:28px 16px;
+    text-align:center;
+    border-radius:8px;
+}
+.adv-card h4{
+    color:#154088;
+    font-size:18px;
+    margin-bottom:10px;
+}
+.adv-card p{
+    font-size:14px;
+    line-height:1.6;
+    color:#555;
+}
+/* ====== 新增：工厂介绍区块 ====== */
+.factory-about{
+    max-width: 1200px;
+    margin: 80px auto;
+    padding:0 20px;
+    display:grid;
+    grid-template-columns: 1fr 1fr;
+    gap:40px;
+    align-items:center;
+}
+.factory-about-text h3{
+    font-size:26px;
+    color:#154088;
+    margin-bottom:20px;
+}
+.factory-about-text p{
+    color:#444;
+    line-height:1.8;
+    font-size:16px;
+    margin:12px 0;
+}
+.factory-about-img{
+    width:100%;
+    border-radius:8px;
+}
+/* ====== 新增：产品入口区块 ====== */
+.product-entry{
+    background:#f6f8fa;
+    padding:70px 20px;
+    text-align:center;
+}
+.product-entry h3{
+    font-size:28px;
+    color:#154088;
+    margin-bottom:16px;
+}
+.product-entry p{
+    max-width:700px;
+    margin:0 auto 30px;
+    color:#555;
+    line-height:1.7;
+}
+.btn-blue{
+    display:inline-block;
+    background:#154088;
+    color:#fff;
+    padding:14px 32px;
+    border-radius:6px;
+    text-decoration:none;
+    font-size:16px;
+}
+.btn-blue:hover{
+    background:#0f3066;
+}
 /* 手机端适配 */
 @media (max-width: 768px){
 .hero-banner{
@@ -156,8 +242,16 @@ font-size:24px;
 .hero-text-wrap p{
 font-size:15px;
 }
+.adv-grid{
+    grid-template-columns: repeat(2,1fr);
 }
-
+.factory-about{
+    grid-template-columns:1fr;
+}
+.advantage-title,.factory-about-text h3,.product-entry h3{
+    font-size:20px;
+}
+}
 /* ========= About 图文布局 ========= */
 .about-row{
 display:grid;
@@ -207,7 +301,6 @@ text-decoration:underline;
 </div>
 </div>
 </header>
-
 <div id="home" class="page-block active" style="padding:0;">
 <section class="hero-banner">
 <!-- ❗这里已经删掉img标签，用CSS背景图 -->
@@ -221,8 +314,65 @@ text-decoration:underline;
 <p class="jp">ブランド向けワンストップサービス：サンプル作成→量産<br>検品レポート提供、納期厳守</p>
 </div>
 </section>
-</div>
 
+<!-- ========== 新增：优势卡片 ========== -->
+<section class="advantage-section">
+    <h3 class="advantage-title en">Why Choose Us</h3>
+    <h3 class="advantage-title jp">弊社の強み</h3>
+    <div class="adv-grid">
+        <div class="adv-card">
+            <h4 class="en">OEM & ODM</h4>
+            <h4 class="jp">OEM・ODM対応</h4>
+            <p class="en">Custom design, logo, material & size support</p>
+            <p class="jp">デザイン・ロゴ・素材・サイズ自由にカスタマイズ</p>
+        </div>
+        <div class="adv-card">
+            <h4 class="en">Sampling Service</h4>
+            <h4 class="jp">サンプル作成</h4>
+            <p class="en">Fast sampling before bulk production</p>
+            <p class="jp">量産前、迅速にサンプル作成可能</p>
+        </div>
+        <div class="adv-card">
+            <h4 class="en">Strict QC Inspection</h4>
+            <h4 class="jp">厳格な品質管理</h4>
+            <p class="en">Inspection report available before shipment</p>
+            <p class="jp">出荷前検品、検査レポート発行</p>
+        </div>
+        <div class="adv-card">
+            <h4 class="en">On-time Delivery</h4>
+            <h4 class="jp">安定した納期</h4>
+            <p class="en">Stable production schedule & reliable lead time</p>
+            <p class="jp">生産計画を守り、納期厳守</p>
+        </div>
+    </div>
+</section>
+
+<!-- ========== 新增：工厂介绍 ========== -->
+<section class="factory-about">
+    <div class="factory-about-text">
+        <h3 class="en">About Our Factory</h3>
+        <h3 class="jp">工場紹介</h3>
+        <p class="en">We are a professional bag manufacturer with more than 15 years of experience. We produce handbags, travel bags, cosmetic bags, backpacks and promotional bags for Japan, Middle East and Southeast Asia customers. We welcome custom orders from buyers all over the world.</p>
+        <p class="jp">私たちは15年以上の実績を持つバッグ専門工場です。ハンドバッグ、トラベルバッグ、ポーチ、リュック、販促用バッグを生産し、日本・中東・東南アジアのバイヤー様と取引しております。オーダー生産を歓迎いたします。</p>
+    </div>
+    <div>
+        <img class="factory-about-img" src="images/factory.jpg" alt="bag factory">
+    </div>
+</section>
+
+<!-- ========== 新增：产品入口区块 ========== -->
+<section class="product-entry">
+    <h3 class="en">Our Products</h3>
+    <h3 class="jp">製品一覧</h3>
+    <p class="en">Explore our full range of bags, send us your requirements for quotation and samples.</p>
+    <p class="jp">各種バッグをご覧ください。仕様をお送りいただければ見積もり・サンプル対応いたします。</p>
+    <a class="btn-blue" href="#product" onclick="switchPage('product')">
+        <span class="en">View All Products</span>
+        <span class="jp">製品を見る</span>
+    </a>
+</section>
+
+</div>
 <div id="about" class="page-block">
 <div class="about-row">
 <div>
@@ -236,7 +386,6 @@ text-decoration:underline;
 </div>
 </div>
 </div>
-
 <div id="product" class="page-block">
 <div class="product-layout">
 <aside class="sidebar">
@@ -317,7 +466,6 @@ text-decoration:underline;
 </div>
 </div>
 </div>
-
 <div id="contact" class="page-block">
 <section class="section">
 <h2 class="en">Contact Us</h2>
@@ -326,7 +474,6 @@ text-decoration:underline;
 <p class="jp">メール：your@jhbag.com.cn</p>
 </section>
 </div>
-
 <div class="lightbox" id="lightbox">
 <div class="lightbox-content">
 <span class="close">&times;</span>
@@ -341,7 +488,6 @@ text-decoration:underline;
 </div>
 </div>
 </div>
-
 <script>
 let currentLang = 'en';
 function switchPage(id){
@@ -392,7 +538,6 @@ lb.onclick = function(e){
 if(e.target === lb) closeLightbox();
 }
 </script>
-
 <footer>
 © 2026 JHBAG. All rights reserved. <a href="https://jhbag.com.cn">jhbag.com.cn</a>
 </footer>
