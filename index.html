@@ -23,27 +23,34 @@
         .item-card{border:1px solid #eee;border-radius:6px;overflow:hidden}
         .item-card img{width:100%;height:180px;object-fit:cover;cursor:zoom-in}
         .item-card p{padding:10px;text-align:center;font-weight:bold}
-        /* ========== 新增：产品规格描述样式 ========== */
-        .product-desc {
-            font-size: 13px;
-            color: #444;
-            line-height: 1.5;
-            padding: 0 8px 12px;
-            text-align:center;
-        }
-        /* ===== 放大弹窗样式 ===== */
+        /* ===== 详情弹窗样式（新版，带参数文字） ===== */
         .lightbox{
             position:fixed;top:0;left:0;width:100%;height:100%;
             background:rgba(0,0,0,0.85);
             display:none;align-items:center;justify-content:center;
-            z-index:9999;padding:20px
+            z-index:9999;padding:20px;
+            overflow:auto
         }
         .lightbox.show{display:flex}
-        .lightbox img{max-width:90%;max-height:90%}
-        .lightbox .close{
-            position:absolute;top:20px;right:30px;
-            color:white;font-size:36px;cursor:pointer
+        .lightbox-content{
+            background:#fff;
+            max-width:800px;
+            width:100%;
+            border-radius:6px;
+            padding:24px;
+            position:relative
         }
+        .lightbox .close{
+            position:absolute;top:12px;right:16px;
+            color:#222;font-size:32px;cursor:pointer;
+            z-index:10
+        }
+        .lb-row{
+            display:grid;grid-template-columns:1fr 1fr;gap:24px;align-items:start
+        }
+        .lb-img{width:100%;max-height:400px;object-fit:contain}
+        .lb-info h3{margin-bottom:16px;font-size:20px}
+        .lb-info p{margin:6px 0;font-size:15px;line-height:1.6}
     </style>
 </head>
 <body>
@@ -97,64 +104,101 @@
             <h4 class="en">Check By</h4>
             <h4 class="jp">カテゴリ</h4>
             <ul>
-                <li onclick="filterCat('all')">All / すべて</li>
-                <li onclick="filterCat('canvas')">Canvas Tote / キャンバストート</li>
-                <li onclick="filterCat('travel')">Travel Goods & Packing cubes / トラベルグッズ</li>
-                <li onclick="filterCat('beach')">Beach Tote / ビーチトート</li>
-                <li onclick="filterCat('tote')">Tote Bag / トートバッグ</li>
-                <li onclick="filterCat('charm')">Bag Charm / バッグチャーム</li>
-                <li onclick="filterCat('women')">Women's Bag / レディースバッグ</li>
-                <li onclick="filterCat('sleeve')">Laptop Sleeve / ラップトップスリーブ</li>
-                <li onclick="filterCat('backpack')">Laptop Backpack / リュックサック</li>
-                <li onclick="filterCat('sport')">Sport Bag / スポーツバッグ</li>
-                <li onclick="filterCat('raffia')">Raffia Bag / ラフィアバッグ</li>
-                <li onclick="filterCat('crossbody')">Phone Crossbody / スマホショルダー</li>
+                <li onclick="filterCat('all')">
+                    <span class="en">All</span>
+                    <span class="jp">すべて</span>
+                </li>
+                <li onclick="filterCat('canvas')">
+                    <span class="en">Canvas Tote</span>
+                    <span class="jp">キャンバストート</span>
+                </li>
+                <li onclick="filterCat('travel')">
+                    <span class="en">Travel Goods & Packing cubes</span>
+                    <span class="jp">トラベルグッズ</span>
+                </li>
+                <li onclick="filterCat('beach')">
+                    <span class="en">Beach Tote</span>
+                    <span class="jp">ビーチトート</span>
+                </li>
+                <li onclick="filterCat('tote')">
+                    <span class="en">Tote Bag</span>
+                    <span class="jp">トートバッグ</span>
+                </li>
+                <li onclick="filterCat('charm')">
+                    <span class="en">Bag Charm</span>
+                    <span class="jp">バッグチャーム</span>
+                </li>
+                <li onclick="filterCat('women')">
+                    <span class="en">Women's Bag</span>
+                    <span class="jp">レディースバッグ</span>
+                </li>
+                <li onclick="filterCat('sleeve')">
+                    <span class="en">Laptop Sleeve</span>
+                    <span class="jp">ラップトップスリーブ</span>
+                </li>
+                <li onclick="filterCat('backpack')">
+                    <span class="en">Laptop Backpack</span>
+                    <span class="jp">リュックサック</span>
+                </li>
+                <li onclick="filterCat('sport')">
+                    <span class="en">Sport Bag</span>
+                    <span class="jp">スポーツバッグ</span>
+                </li>
+                <li onclick="filterCat('raffia')">
+                    <span class="en">Raffia Bag</span>
+                    <span class="jp">ラフィアバッグ</span>
+                </li>
+                <li onclick="filterCat('crossbody')">
+                    <span class="en">Phone Crossbody</span>
+                    <span class="jp">スマホショルダー</span>
+                </li>
             </ul>
         </aside>
         <div class="grid-wrap">
-            <div class="item-card" data-cat="canvas">
-                <img src="https://via.placeholder.com/400x220/e8e8e8?text=Canvas+Tote" alt="Canvas Tote" onclick="openLightbox(this.src)">
-                <p>Canvas Tote</p>
-                <div class="product-desc">
-                    Material: 16oz cotton canvas<br>
-                    Custom logo: Print / Embroidery / Deboss
-                </div>
+            <!-- Canvas Tote -->
+            <div class="item-card" data-cat="canvas"
+                 data-img="https://via.placeholder.com/400x220/e8e8e8?text=Canvas+Tote"
+                 data-name="Canvas Tote GR20260108"
+                 data-en-info="Materials: 16oz cotton canvas<br>Lining: No<br>Hardware: No<br>Size (cm): L32 × H38 (Handle Drop:25cm)<br>Long strap: No<br>Pocket: No<br>Weight:0.35kg<br>Accept customized logo: Yes, deboss / print / metal / embroidery / laser logo"
+                 data-jp-info="素材：16ozコットンキャンバス<br>裏地：無し<br>金具：無し<br>サイズ(cm)：L32 × H38（持ち手25cm）<br>ショルダー紐：無し<br>ポケット：無し<br>重さ：0.35kg<br>ロゴカスタマイズ可能：箔押し、プリント、メタルロゴ、刺繍、レーザー刻印">
+                <img src="https://via.placeholder.com/400x220/e8e8e8?text=Canvas+Tote" alt="Canvas Tote" onclick="openLightbox(this)">
+                <p>Canvas Tote GR20260108</p>
             </div>
             <!-- Tote Style A -->
-            <div class="item-card" data-cat="tote">
-                <img src="images/tote-a-01.jpg" alt="Tote Bag Style A" onclick="openLightbox(this.src)">
+            <div class="item-card" data-cat="tote"
+                 data-img="images/tote-a-01.jpg"
+                 data-name="Tote Bag Style A"
+                 data-en-info="Material: PU leather<br>Size: L40 × H32 × D12 cm<br>Custom Logo: Deboss / Print / Embroidery available"
+                 data-jp-info="素材：PUレザー<br>サイズ：L40 × H32 × D12 cm<br>ロゴ：箔押し、プリント、刺繍対応">
+                <img src="images/tote-a-01.jpg" alt="Tote Bag Style A" onclick="openLightbox(this)">
                 <p>Tote Bag Style A</p>
-                <div class="product-desc">
-                    Material: PU leather<br>
-                    Size: L40 × H32 × D12 cm<br>
-                    Custom Logo: Deboss / Print / Embroidery available
-                </div>
             </div>
             <!-- Tote Style B -->
-            <div class="item-card" data-cat="tote">
-                <img src="images/tote-b-01.jpg" alt="Tote Bag Style B" onclick="openLightbox(this.src)">
+            <div class="item-card" data-cat="tote"
+                 data-img="images/tote-b-01.jpg"
+                 data-name="Tote Bag Style B"
+                 data-en-info="Material: PU leather<br>Size: L36 × H28 × D10 cm<br>Custom Logo: Deboss / Print / Metal logo available"
+                 data-jp-info="素材：PUレザー<br>サイズ：L36 × H28 × D10 cm<br>ロゴ：箔押し、プリント、メタルロゴ対応">
+                <img src="images/tote-b-01.jpg" alt="Tote Bag Style B" onclick="openLightbox(this)">
                 <p>Tote Bag Style B</p>
-                <div class="product-desc">
-                    Material: PU leather<br>
-                    Size: L36 × H28 × D10 cm<br>
-                    Custom Logo: Deboss / Print / Metal logo available
-                </div>
             </div>
-            <div class="item-card" data-cat="beach">
-                <img src="https://via.placeholder.com/400x220/e8e8e8?text=Beach+Tote" alt="Beach Tote" onclick="openLightbox(this.src)">
+            <!-- Beach Tote -->
+            <div class="item-card" data-cat="beach"
+                 data-img="https://via.placeholder.com/400x220/e8e8e8?text=Beach+Tote"
+                 data-name="Beach Tote"
+                 data-en-info="Material: Raffia / Canvas<br>Suitable for seaside vacation<br>Custom logo support"
+                 data-jp-info="素材：ラフィア / キャンバス<br>ビーチ向け<br>ロゴカスタマイズ可能">
+                <img src="https://via.placeholder.com/400x220/e8e8e8?text=Beach+Tote" alt="Beach Tote" onclick="openLightbox(this)">
                 <p>Beach Tote</p>
-                <div class="product-desc">
-                    Material: Raffia / Canvas<br>
-                    Suitable for seaside vacation
-                </div>
             </div>
-            <div class="item-card" data-cat="backpack">
-                <img src="https://via.placeholder.com/400x220/e8e8e8?text=Laptop+Backpack" alt="Laptop Backpack" onclick="openLightbox(this.src)">
+            <!-- Backpack -->
+            <div class="item-card" data-cat="backpack"
+                 data-img="https://via.placeholder.com/400x220/e8e8e8?text=Laptop+Backpack"
+                 data-name="Laptop Backpack"
+                 data-en-info="Material: 600D polyester<br>Fit for 14/15.6 inch laptop<br>Multiple pockets"
+                 data-jp-info="素材：600Dポリエステル<br>14/15.6インチPC対応<br>複数ポケット">
+                <img src="https://via.placeholder.com/400x220/e8e8e8?text=Laptop+Backpack" alt="Laptop Backpack" onclick="openLightbox(this)">
                 <p>Laptop Backpack</p>
-                <div class="product-desc">
-                    Material: 600D polyester<br>
-                    Fit for 14/15.6 inch laptop
-                </div>
             </div>
         </div>
     </div>
@@ -168,12 +212,23 @@
         <p class="jp">メール：your@jhbag.com.cn</p>
     </section>
 </div>
-<!-- 放大弹窗模块 -->
-<div class="lightbox" id="lightbox" onclick="closeLightbox()">
-    <span class="close">&times;</span>
-    <img id="light-img" src="" alt="preview">
+<!-- 新版弹窗：大图 + 参数详情 -->
+<div class="lightbox" id="lightbox">
+    <div class="lightbox-content">
+        <span class="close">&times;</span>
+        <div class="lb-row">
+            <div>
+                <img class="lb-img" id="lbImg" src="" alt="preview">
+            </div>
+            <div class="lb-info">
+                <h3 id="lbName"></h3>
+                <div id="lbText"></div>
+            </div>
+        </div>
+    </div>
 </div>
 <script>
+let currentLang = 'en';
 // 页面切换
 function switchPage(id){
     document.querySelectorAll('.page-block').forEach(el=>el.classList.remove('active'))
@@ -181,6 +236,7 @@ function switchPage(id){
 }
 // 语言切换
 function setLang(lang){
+    currentLang = lang;
     if(lang=='en'){
         document.querySelectorAll('.jp').forEach(el=>el.style.display='none')
         document.querySelectorAll('.en').forEach(el=>el.style.display='block')
@@ -201,18 +257,32 @@ function filterCat(catName){
         }
     })
 }
-// ========== 图片放大功能函数 ==========
+// ========== 新版弹窗逻辑 ==========
 const lb = document.getElementById('lightbox');
-const lbImg = document.getElementById('light-img');
-function openLightbox(src){
-    lbImg.src = src;
+const lbImg = document.getElementById('lbImg');
+const lbName = document.getElementById('lbName');
+const lbText = document.getElementById('lbText');
+
+function openLightbox(imgEl){
+    const card = imgEl.closest('.item-card');
+    lbImg.src = card.dataset.img;
+    lbName.innerText = card.dataset.name;
+    if(currentLang === 'en'){
+        lbText.innerHTML = card.dataset.enInfo;
+    }else{
+        lbText.innerHTML = card.dataset.jpInfo;
+    }
     lb.classList.add('show');
 }
 function closeLightbox(){
     lb.classList.remove('show');
 }
-// 点 × 关闭
+// 关闭按钮
 document.querySelector('.close').onclick = closeLightbox;
+// 点击弹窗空白区域关闭
+lb.onclick = function(e){
+    if(e.target === lb) closeLightbox();
+}
 </script>
 </body>
 </html>
