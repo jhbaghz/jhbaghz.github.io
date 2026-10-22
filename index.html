@@ -1,65 +1,60 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>JHBAG | Bag Manufacturer</title>
-    <style>
-        *{margin:0;padding:0;box-sizing:border-box;font-family:Arial,sans-serif}
-        /* ========= 头部样式【匹配你截图布局】 ========= */
-        header{
-            background:#154088;
-            color:#fff;
-            padding:16px 30px;
-        }
-        .header-wrap{
-            max-width:1200px;
-            margin:0 auto;
-            display:flex;
-            align-items:flex-start;
-            gap:60px;
-        }
-        .logo{
-            font-size:36px;
-            font-weight:bold;
-            white-space:nowrap;
-            line-height:1.4;
-        }
-        .nav-area{
-            flex:1;
-            display:flex;
-            flex-direction:column;
-            gap:16px;
-        }
-        nav{
-            display:flex;
-            gap:72px;
-        }
-        nav a{
-            color:#ff4444;
-            text-decoration:none;
-            font-size:24px;
-        }
-        nav a:hover{
-            text-decoration:underline;
-        }
-        .lang-box{
-            align-self:flex-end;
-            display:flex;
-            gap:8px;
-        }
-        .lang-box button{
-            padding:6px 12px;
-            border:none;
-            border-radius:3px;
-            cursor:pointer;
-            font-size:20px;
-            color:#ff4444;
-            background:transparent;
-        }
-        .lang-box button:hover{
-            text-decoration:underline;
-        }
+header{
+    background:#154088;
+    color:#fff;
+    padding:16px 20px;
+    position: relative;
+}
+.header-wrap{
+    max-width:1200px;
+    margin:0 auto;
+    position: relative;
+    display:flex;
+    align-items:center;
+    height:100%;
+}
+.logo{
+    font-size:36px;
+    font-weight:bold;
+    white-space:nowrap;
+    position: relative;
+    z-index:2;
+}
+/* 导航：整条蓝色栏正中间 */
+nav{
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    display:flex;
+    gap:72px;
+}
+nav a{
+    color:#ff4444;
+    text-decoration:none;
+    font-size:24px;
+}
+nav a:hover{
+    text-decoration:underline;
+}
+.lang-box{
+    margin-left:auto;
+    display:flex;
+    gap:8px;
+    position: relative;
+    z-index:2;
+}
+.lang-box button{
+    padding:6px 12px;
+    border:none;
+    border-radius:3px;
+    cursor:pointer;
+    font-size:20px;
+    color:#ff4444;
+    background:transparent;
+}
+.lang-box button:hover{
+    text-decoration:underline;        }
         /* ========= 下面全部是你原来的样式，不动 ========= */
         .page-block{display:none;padding:40px 20px;max-width:1200px;margin:0 auto}
         .page-block.active{display:block}
@@ -106,33 +101,30 @@
 <header>
     <div class="header-wrap">
         <div class="logo">JHBAG</div>
-        <div class="nav-area">
-            <nav>
-                <a href="#home" onclick="switchPage('home')">
-                    <span class="en">Home</span>
-                    <span class="jp">ホーム</span>
-                </a>
-                <a href="#about" onclick="switchPage('about')">
-                    <span class="en">About</span>
-                    <span class="jp">会社概要</span>
-                </a>
-                <a href="#product" onclick="switchPage('product')">
-                    <span class="en">Product</span>
-                    <span class="jp">製品</span>
-                </a>
-                <a href="#contact" onclick="switchPage('contact')">
-                    <span class="en">Contact</span>
-                    <span class="jp">お問い合わせ</span>
-                </a>
-            </nav>
-            <div class="lang-box">
-                <button onclick="setLang('en')">EN</button>
-                <button onclick="setLang('jp')">日本語</button>
-            </div>
+        <nav>
+            <a href="#home" onclick="switchPage('home')">
+                <span class="en">Home</span>
+                <span class="jp">ホーム</span>
+            </a>
+            <a href="#about" onclick="switchPage('about')">
+                <span class="en">About</span>
+                <span class="jp">会社概要</span>
+            </a>
+            <a href="#product" onclick="switchPage('product')">
+                <span class="en">Product</span>
+                <span class="jp">製品</span>
+            </a>
+            <a href="#contact" onclick="switchPage('contact')">
+                <span class="en">Contact</span>
+                <span class="jp">お問い合わせ</span>
+            </a>
+        </nav>
+        <div class="lang-box">
+            <button onclick="setLang('en')">EN</button>
+            <button onclick="setLang('jp')">日本語</button>
         </div>
     </div>
-</header>
-<!-- HOME -->
+</header><!-- HOME -->
 <div id="home" class="page-block active">
     <section class="section">
         <h2 class="en">Custom Bag Manufacturer</h2>
@@ -337,4 +329,4 @@ lb.onclick = function(e){
 }
 </script>
 </body>
-</html>
+</html>h
