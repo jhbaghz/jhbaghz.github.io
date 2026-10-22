@@ -6,7 +6,7 @@
     <title>JHBAG | Bag Manufacturer</title>
     <style>
         *{margin:0;padding:0;box-sizing:border-box;font-family:Arial,sans-serif}
-        /* ========= 新版头部样式 ========= */
+        /* ========= 新版头部样式【已调好：Contact和语言按钮右对齐，空隙10px，导航宽松间距】 ========= */
         header{background:#154088;color:#fff;padding:16px 30px}
         .header-wrap{
             max-width:1200px;
@@ -24,11 +24,20 @@
         }
         nav{
             display:flex;
-            gap:36px;
+            gap:48px; /* 导航栏目之间加宽，宽松效果 */
         }
         nav a{color:#fff;text-decoration:none;font-size:18px}
         nav a:hover{text-decoration:underline}
-        .lang-box button{padding:6px 12px;margin-left:6px;border:none;border-radius:3px;cursor:pointer}
+        .lang-box{
+            display:flex;
+        }
+        .lang-box button{
+            padding:6px 12px;
+            margin-left:6px;
+            border:none;
+            border-radius:3px;
+            cursor:pointer;
+        }
         /* ========= 下面全部是你原来的样式，不动 ========= */
         .page-block{display:none;padding:40px 20px;max-width:1200px;margin:0 auto}
         .page-block.active{display:block}
