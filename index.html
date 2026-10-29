@@ -11,59 +11,59 @@ body {
 }
 /* ========= 头部样式 ========= */
 header{
-background:#154088;
-color:#fff;
-padding:16px 20px;
-position: relative;
+ background:#154088;
+ color:#fff;
+ padding:16px 20px;
+ position: relative;
 }
 .header-wrap{
-max-width:1200px;
-margin:0 auto;
-position: relative;
-display:flex;
-align-items:center;
-height:100%;
+ max-width:1200px;
+ margin:0 auto;
+ position: relative;
+ display:flex;
+ align-items:center;
+ height:100%;
 }
 .logo{
-font-size:36px;
-font-weight:bold;
-white-space:nowrap;
-position: relative;
-z-index:2;
+ font-size:36px;
+ font-weight:bold;
+ white-space:nowrap;
+ position: relative;
+ z-index:2;
 }
 nav{
-position: absolute;
-left: 50%;
-transform: translateX(-50%);
-display:flex;
-gap:72px;
+ position: absolute;
+ left: 50%;
+ transform: translateX(-50%);
+ display:flex;
+ gap:72px;
 }
 nav a{
-color:#ffffff;
-text-decoration:none;
-font-size:24px;
+ color:#ffffff;
+ text-decoration:none;
+ font-size:24px;
 }
 nav a:hover{
-text-decoration:underline;
+ text-decoration:underline;
 }
 .lang-box{
-margin-left:auto;
-display:flex;
-gap:8px;
-position: relative;
-z-index:2;
+ margin-left:auto;
+ display:flex;
+ gap:8px;
+ position: relative;
+ z-index:2;
 }
 .lang-box button{
-padding:6px 12px;
-border:none;
-border-radius:3px;
-cursor:pointer;
-font-size:20px;
-color:#ffffff;
-background:transparent;
+ padding:6px 12px;
+ border:none;
+ border-radius:3px;
+ cursor:pointer;
+ font-size:20px;
+ color:#ffffff;
+ background:transparent;
 }
 .lang-box button:hover{
-text-decoration:underline;
+ text-decoration:underline;
 }
 /* ========= 页面通用样式 ========= */
 .page-block{display:none;padding:40px 20px;max-width:1200px;margin:0 auto}
@@ -79,180 +79,183 @@ text-decoration:underline;
 .item-card p{padding:10px;text-align:center;font-weight:bold}
 /* ===== 详情弹窗样式 ===== */
 .lightbox{
-position:fixed;top:0;left:0;width:100%;height:100%;
-background:rgba(0,0,0,0.85);
-display:none;align-items:center;justify-content:center;
-z-index:9999;padding:20px;
-overflow:auto
+ position:fixed;top:0;left:0;width:100%;height:100%;
+ background:rgba(0,0,0,0.85);
+ display:none;align-items:center;justify-content:center;
+ z-index:9999;padding:20px;
+ overflow:auto
 }
 .lightbox.show{display:flex}
 .lightbox-content{
-background:#fff;
-max-width:800px;
-width:100%;
-border-radius:6px;
-padding:24px;
-position:relative
+ background:#fff;
+ max-width:800px;
+ width:100%;
+ border-radius:6px;
+ padding:24px;
+ position:relative
 }
 .lightbox .close{
-position:absolute;top:12px;right:16px;
-color:#222;font-size:32px;cursor:pointer;
-z-index:10
+ position:absolute;top:12px;right:16px;
+ color:#222;font-size:32px;cursor:pointer;
+ z-index:10
 }
 .lb-row{
-display:grid;grid-template-columns:1fr 1fr;gap:24px;align-items:start
+ display:grid;grid-template-columns:1fr 1fr;gap:24px;align-items:start
 }
 .lb-img{width:100%;max-height:400px;object-fit:contain}
 .lb-info h3{margin-bottom:16px;font-size:20px}
 .lb-info p{margin:6px 0;font-size:15px;line-height:1.6}
 /* =========【重点】Banner 背景cover模式 ========= */
 .hero-banner{
-width: 100vw; /* 关键：视口100%宽度，不是父元素100% */
-height: 360px;
-min-height: 300px;
-background-image: url("images/banner-factory.jpg");
-background-size: cover;
-background-position: center;
-background-repeat: no-repeat;
-position:relative;
-display:flex;
-align-items:center;
-justify-content:center;
-margin-left: calc(-50vw + 50%); /* 向左拉，突破父容器居中限制 */
+ width: 100vw; /* 关键：视口100%宽度，不是父元素100% */
+ height: 360px;
+ min-height: 300px;
+ background-image: url("images/banner-factory.jpg");
+ background-size: cover;
+ background-position: center;
+ background-repeat: no-repeat;
+ position:relative;
+ display:flex;
+ align-items:center;
+ justify-content:center;
+ margin-left: calc(-50vw + 50%); /* 向左拉，突破父容器居中限制 */
 }
 .hero-overlay{
-position:absolute; inset:0;
-background:rgba(0,0,0,0.4);
+ position:absolute;
+ inset:0;
+ background:rgba(0,0,0,0.4);
 }
 .hero-text-wrap{
-position:relative;
-z-index:2;
-text-align:center;
-color:#fff;
-padding:0 20px;
-width:100%;
-max-width:1100px;
+ position:relative;
+ z-index:2;
+ text-align:center;
+ color:#fff;
+ padding:0 20px;
+ width:100%;
+ max-width:1100px;
 }
 .hero-text-wrap h2{
-font-size:36px;
-margin-bottom:16px;
-line-height:1.3;
+ font-size:36px;
+ margin-bottom:16px;
+ line-height:1.3;
 }
 .hero-text-wrap p{
-font-size:18px;
-line-height:1.7;
-margin:8px 0;
+ font-size:18px;
+ line-height:1.7;
+ margin:8px 0;
 }
 /* ====== 新增：优势卡片 ====== */
 .advantage-section{
-max-width: 1200px;
-margin: 60px auto;
-padding: 0 20px;
+ max-width: 1200px;
+ margin: 60px auto;
+ padding: 0 20px;
 }
 .advantage-title{
-text-align:center;
-font-size:26px;
-color:#154088;
-margin-bottom:30px;
+ text-align:center;
+ font-size:26px;
+ color:#154088;
+ margin-bottom:30px;
 }
 .adv-grid{
-display:grid; grid-template-columns: repeat(4,1fr); gap:24px;
+ display:grid;
+ grid-template-columns: repeat(4,1fr);
+ gap:24px;
 }
 .adv-card{
-border:1px solid #eee;
-padding:28px 16px;
-text-align:center;
-border-radius:8px;
+ border:1px solid #eee;
+ padding:28px 16px;
+ text-align:center;
+ border-radius:8px;
 }
 .adv-card h4{
-color:#154088;
-font-size:18px;
-margin-bottom:10px;
+ color:#154088;
+ font-size:18px;
+ margin-bottom:10px;
 }
 .adv-card p{
-font-size:14px;
-line-height:1.6;
-color:#555;
+ font-size:14px;
+ line-height:1.6;
+ color:#555;
 }
 /* ====== 新增：工厂介绍区块 ====== */
 .factory-about{
-max-width: 1200px;
-margin: 80px auto;
-padding:0 20px;
-display:grid;
-grid-template-columns: 1fr 1fr;
-gap:40px;
-align-items:center;
+ max-width: 1200px;
+ margin: 80px auto;
+ padding:0 20px;
+ display:grid;
+ grid-template-columns: 1fr 1fr;
+ gap:40px;
+ align-items:center;
 }
 .factory-about-text h3{
-font-size:26px;
-color:#154088;
-margin-bottom:20px;
+ font-size:26px;
+ color:#154088;
+ margin-bottom:20px;
 }
 .factory-about-text p{
-color:#444;
-line-height:1.8;
-font-size:16px;
-margin:12px 0;
+ color:#444;
+ line-height:1.8;
+ font-size:16px;
+ margin:12px 0;
 }
 .factory-about-img{
-width:100%;
-border-radius:8px;
+ width:100%;
+ border-radius:8px;
 }
 /* ====== 新增：产品入口区块 ====== */
 .product-entry{
-background:#f6f8fa;
-padding:70px 20px;
-text-align:center;
+ background:#f6f8fa;
+ padding:70px 20px;
+ text-align:center;
 }
 .product-entry h3{
-font-size:28px;
-color:#154088;
-margin-bottom:16px;
+ font-size:28px;
+ color:#154088;
+ margin-bottom:16px;
 }
 .product-entry p{
-max-width:700px;
-margin:0 auto 30px;
-color:#555;
-line-height:1.7;
+ max-width:700px;
+ margin:0 auto 30px;
+ color:#555;
+ line-height:1.7;
 }
 .btn-blue{
-display:inline-block;
-background:#154088;
-color:#fff;
-padding:14px 32px;
-border-radius:6px;
-text-decoration:none;
-font-size:16px;
+ display:inline-block;
+ background:#154088;
+ color:#fff;
+ padding:14px 32px;
+ border-radius:6px;
+ text-decoration:none;
+ font-size:16px;
 }
 .btn-blue:hover{
-background:#0f3066;
+ background:#0f3066;
 }
 /* 手机端适配 */
 @media (max-width: 768px){
-.hero-banner{ height:280px; min-height:240px; }
-.hero-text-wrap h2{ font-size:24px; }
-.hero-text-wrap p{ font-size:15px; }
-.adv-grid{ grid-template-columns: repeat(2,1fr); }
-.factory-about{ grid-template-columns:1fr; }
-.advantage-title,.factory-about-text h3,.product-entry h3{ font-size:20px; }
+ .hero-banner{ height:280px; min-height:240px; }
+ .hero-text-wrap h2{ font-size:24px; }
+ .hero-text-wrap p{ font-size:15px; }
+ .adv-grid{ grid-template-columns: repeat(2,1fr); }
+ .factory-about{ grid-template-columns:1fr; }
+ .advantage-title,.factory-about-text h3,.product-entry h3{ font-size:20px; }
 }
 /* ========= About 图文布局 ========= */
 .about-row{
-display:grid;
-grid-template-columns: 1fr 1fr;
-gap:32px;
-align-items:center;
+ display:grid;
+ grid-template-columns: 1fr 1fr;
+ gap:32px;
+ align-items:center;
 }
 .about-row img{
-width:100%;
-border-radius:6px;
+ width:100%;
+ border-radius:6px;
 }
 .about-list{
-line-height:1.75;
+ line-height:1.75;
 }
 .about-list p{
-margin:10px 0;
+ margin:10px 0;
 }
 /* ========= Contact页面 补充间距样式 ========= */
 #contact p{
@@ -262,313 +265,327 @@ margin:10px 0;
 }
 /* ========= 底部版权 Footer：固定在屏幕底部 ========= */
 footer {
-position: fixed;
-bottom: 0;
-left: 0;
-width: 100%;
-background:#154088;
-color:#fff;
-text-align:center;
-padding:12px 16px;
-font-size:14px;
-z-index: 100;
+ position: fixed;
+ bottom: 0;
+ left: 0;
+ width: 100%;
+ background:#154088;
+ color:#fff;
+ text-align:center;
+ padding:12px 16px;
+ font-size:14px;
+ z-index: 100;
 }
 footer a {
-color:#fff;
-text-decoration:none;
+ color:#fff;
+ text-decoration:none;
 }
 footer a:hover {
-text-decoration:underline;
+ text-decoration:underline;
 }
 </style>
 </head>
 <body>
 <header>
-<div class="header-wrap">
-<div class="logo">JHBAG</div>
-<nav>
-<a href="#home" onclick="switchPage('home')" data-en="Home" data-jp="ホーム">Home</a>
-<a href="#about" onclick="switchPage('about')" data-en="About" data-jp="会社概要">About</a>
-<a href="#product" onclick="switchPage('product')" data-en="Product" data-jp="製品">Product</a>
-<a href="#contact" onclick="switchPage('contact')" data-en="Contact" data-jp="お問い合わせ">Contact</a>
-</nav>
-<div class="lang-box">
-<button onclick="setLang('en')">EN</button>
-<button onclick="setLang('jp')">日本語</button>
-</div>
-</div>
+ <div class="header-wrap">
+ <div class="logo">JHBAG</div>
+ <nav>
+ <a href="#home" onclick="switchPage('home')" data-en="Home" data-jp="ホーム">Home</a>
+ <a href="#about" onclick="switchPage('about')" data-en="About" data-jp="会社概要">About</a>
+ <a href="#product" onclick="switchPage('product')" data-en="Product" data-jp="製品">Product</a>
+ <a href="#contact" onclick="switchPage('contact')" data-en="Contact" data-jp="お問い合わせ">Contact</a>
+ </nav>
+ <div class="lang-box">
+ <button onclick="setLang('en')">EN</button>
+ <button onclick="setLang('jp')">日本語</button>
+ </div>
+ </div>
 </header>
 <div id="home" class="page-block active" style="padding:0;">
-<section class="hero-banner">
-<!-- ❗这里已经删掉img标签，用CSS背景图 -->
-<div class="hero-overlay"></div>
-<div class="hero-text-wrap">
-<h2 class="en">Specialize in OEM & ODM Custom Handbags for Global Brands</h2>
-<h2 class="jp">グローバルブランド向けOEM・ODMハンドバッグ専門メーカー</h2>
-<p class="en">Huizhou Jiuheng Leather, over 20 years of handbag manufacturing experience</p>
-<p class="jp">恵州久恒皮革、20年以上のハンドバッグ製造実績</p>
-<p class="en">One-stop service from product development, sampling to bulk production<br>Provide Inspection Report | On-time Delivery</p>
-<p class="jp">商品開発・サンプル作成から量産までワンストップ対応<br>検品レポート提供、納期厳守</p>
-</div>
-</section>
-<!-- ========== 新增：优势卡片 ========== -->
-<section class="advantage-section">
-<h3 class="advantage-title en">Why Choose Us</h3>
-<h3 class="advantage-title jp">弊社の強み</h3>
-<div class="adv-grid">
-<div class="adv-card">
-<h4 class="en">OEM & ODM</h4>
-<h4 class="jp">OEM・ODM対応</h4>
-<p class="en">Custom design, logo, material & size support</p>
-<p class="jp">デザイン・ロゴ・素材・サイズ自由にカスタマイズ</p>
-</div>
-<div class="adv-card">
-<h4 class="en">Sampling Service</h4>
-<h4 class="jp">サンプル作成</h4>
-<p class="en">Fast sampling before bulk production</p>
-<p class="jp">量産前、迅速にサンプル作成可能</p>
-</div>
-<div class="adv-card">
-<h4 class="en">Strict QC Inspection</h4>
-<h4 class="jp">厳格な品質管理</h4>
-<p class="en">Inspection report available before shipment</p>
-<p class="jp">出荷前検品、検査レポート発行</p>
-</div>
-<div class="adv-card">
-<h4 class="en">On-time Delivery</h4>
-<h4 class="jp">安定した納期</h4>
-<p class="en">Stable production schedule & reliable lead time</p>
-<p class="jp">生産計画を守り、納期厳守</p>
-</div>
-</div>
-</section>
-<!-- ========== 新增：工厂介绍 ========== -->
-<section class="factory-about">
-<div class="factory-about-text">
-<h3 class="en">About Our Factory</h3>
-<h3 class="jp">工場紹介</h3>
-<p class="en">Huizhou Jiuheng Leather Co., Ltd. is a professional ODM/OEM handbag manufacturer founded in 2001 (formerly Qiaofa Handbag Factory). Rebranded in 2025, we have over 20 years of production experience, supporting custom development and mass production for international brands. We work with genuine leather, PU/PVC, nylon, polyester, canvas and special fabrics.</p>
-<p class="jp">恵州久恒皮革有限公司は2001年に橋発ハンドバッグ工場として創業、2025年に社名変更いたしました。20年以上の製造経験を持つハンドバッグODM/OEM専門メーカーで、国際ブランド向けの開発から量産までカスタム対応しています。本革、PU・PVC、ナイロン、ポリエステル、キャンバス、特殊素材に対応します。</p>
-<p class="en">Located in Huizhou, Guangdong, we enjoy convenient logistics, around 1 hour to Shenzhen Port and 1.5 hours to Hong Kong Port, supporting efficient exports worldwide.</p>
-<p class="jp">広東省恵州市に位置し、深圳港まで約1時間、香港港まで約1.5時間と物流に恵まれ、世界各国へ効率的に輸出できます。</p>
-</div>
-<div>
-<img class="factory-about-img" src="images/factory.jpg" alt="bag factory">
-</div>
-</section>
-<!-- ========== 新增：产品入口区块 ========== -->
-<section class="product-entry">
-<h3 class="en">Our Products</h3>
-<h3 class="jp">製品一覧</h3>
-<p class="en">Explore our full range of bags, send us your requirements for quotation and samples.</p>
-<p class="jp">各種バッグをご覧ください。仕様をお送りいただければ見積もり・サンプル対応いたします。</p>
-<a class="btn-blue" href="#product" onclick="switchPage('product')">
-<span class="en">View All Products</span>
-<span class="jp">製品を見る</span>
-</a>
-</section>
+ <section class="hero-banner">
+ <!-- ❗这里已经删掉img标签，用CSS背景图 -->
+ <div class="hero-overlay"></div>
+ <div class="hero-text-wrap">
+ <h2 class="en">Specialize in OEM & ODM Custom Handbags for Global Brands</h2>
+ <h2 class="jp">グローバルブランド向けOEM・ODMハンドバッグ専門メーカー</h2>
+ <p class="en">Huizhou Jiuheng Leather, over 20 years of handbag manufacturing experience</p>
+ <p class="jp">恵州久恒皮革、20年以上のハンドバッグ製造実績</p>
+ <p class="en">One-stop service from product development, sampling to bulk production<br>Provide Inspection Report | On-time Delivery</p>
+ <p class="jp">商品開発・サンプル作成から量産までワンストップ対応<br>検品レポート提供、納期厳守</p>
+ </div>
+ </section>
+ <!-- ========== 新增：优势卡片 ========== -->
+ <section class="advantage-section">
+ <h3 class="advantage-title en">Why Choose Us</h3>
+ <h3 class="advantage-title jp">弊社の強み</h3>
+ <div class="adv-grid">
+ <div class="adv-card">
+ <h4 class="en">OEM & ODM</h4>
+ <h4 class="jp">OEM・ODM対応</h4>
+ <p class="en">Custom design, logo, material & size support</p>
+ <p class="jp">デザイン・ロゴ・素材・サイズ自由にカスタマイズ</p>
+ </div>
+ <div class="adv-card">
+ <h4 class="en">Sampling Service</h4>
+ <h4 class="jp">サンプル作成</h4>
+ <p class="en">Fast sampling before bulk production</p>
+ <p class="jp">量産前、迅速にサンプル作成可能</p>
+ </div>
+ <div class="adv-card">
+ <h4 class="en">Strict QC Inspection</h4>
+ <h4 class="jp">厳格な品質管理</h4>
+ <p class="en">Inspection report available before shipment</p>
+ <p class="jp">出荷前検品、検査レポート発行</p>
+ </div>
+ <div class="adv-card">
+ <h4 class="en">On-time Delivery</h4>
+ <h4 class="jp">安定した納期</h4>
+ <p class="en">Stable production schedule & reliable lead time</p>
+ <p class="jp">生産計画を守り、納期厳守</p>
+ </div>
+ </div>
+ </section>
+ <!-- ========== 新增：工厂介绍 ========== -->
+ <section class="factory-about">
+ <div class="factory-about-text">
+ <h3 class="en">About Our Factory</h3>
+ <h3 class="jp">工場紹介</h3>
+ <p class="en">Huizhou Jiuheng Leather Co., Ltd. is a professional ODM/OEM handbag manufacturer founded in 2001 (formerly Qiaofa Handbag Factory). Rebranded in 2025, we have over 20 years of production experience, supporting custom development and mass production for international brands. We work with genuine leather, PU/PVC, nylon, polyester, canvas and special fabrics.</p>
+ <p class="jp">恵州久恒皮革有限公司は2001年に橋発ハンドバッグ工場として創業、2025年に社名変更いたしました。20年以上の製造経験を持つハンドバッグODM/OEM専門メーカーで、国際ブランド向けの開発から量産までカスタム対応しています。本革、PU・PVC、ナイロン、ポリエステル、キャンバス、特殊素材に対応します。</p>
+ <p class="en">Located in Huizhou, Guangdong, we enjoy convenient logistics, around 1 hour to Shenzhen Port and 1.5 hours to Hong Kong Port, supporting efficient exports worldwide.</p>
+ <p class="jp">広東省恵州市に位置し、深圳港まで約1時間、香港港まで約1.5時間と物流に恵まれ、世界各国へ効率的に輸出できます。</p>
+ </div>
+ <div>
+ <img class="factory-about-img" src="images/factory.jpg" alt="bag factory">
+ </div>
+ </section>
+ <!-- ========== 新增：产品入口区块 ========== -->
+ <section class="product-entry">
+ <h3 class="en">Our Products</h3>
+ <h3 class="jp">製品一覧</h3>
+ <p class="en">Explore our full range of bags, send us your requirements for quotation and samples.</p>
+ <p class="jp">各種バッグをご覧ください。仕様をお送りいただければ見積もり・サンプル対応いたします。</p>
+ <a class="btn-blue" href="#product" onclick="switchPage('product')">
+ <span class="en">View All Products</span>
+ <span class="jp">製品を見る</span>
+ </a>
+ </section>
 </div>
 <div id="about" class="page-block">
-<div class="about-row">
-<div>
-<img src="images/about-factory.jpg" alt="bag factory">
-</div>
-<div>
-<h2 class="en">About Us</h2>
-<h2 class="jp">会社概要</h2>
-<div class="about-list">
-<p class="en">• Huizhou Jiuheng Leather Co., Ltd. is a professional ODM/OEM handbag manufacturer with over 20 years of production experience, offering customized solutions from product development to mass production.</p>
-<p class="jp">• 恵州久恒皮革有限公司（Huizhou Jiuheng Leather Co., Ltd.）は、20年以上の製造実績を誇るハンドバッグのODM/OEM専門メーカーです。デザイン開発・試作から量産、グローバル出荷まで、一気通貫のソリューションをご提供いたします。</p>
-<p class="en">• Originally established in 2001 as Qiaofa Handbag Factory, the company rebranded to Huizhou Jiuheng Leather in 2025 to reflect its expanded capabilities and commitment to serving international brands at scale.</p>
-<p class="jp">• 2001年に「橋発ハンドバッグ工場」として創業し、2025年に「恵州久恒皮革有限公司」へ社名変更いたしました。製造能力の拡大と、国際ブランドへの大規模供給体制へのコミットメントを示すものです。</p>
-<p class="en">• Our production lines handle diverse materials — including genuine leather, PU/PVC, nylon, polyester, cotton canvas, and specialty fabrics — enabling us to meet varied brand positioning.</p>
-<p class="jp">• 本革、PU・PVC、ナイロン、ポリエステル、コットンキャンバス、特殊素材など多様な素材の加工に対応し、ミッドマーケットからプレミアムラインまで幅広いブランドポジショニングにお応えいたします。</p>
-<p class="en">• Located in Huizhou, Guangdong, our facility is approximately 1 hour from Shenzhen Port and 1.5 hours from Hong Kong Port, ensuring fast, cost-efficient export logistics to global destinations.</p>
-<p class="jp">• 広東省恵州市の当社工場は深圳港から約1時間、香港港から約1.5時間と好立地にあり、世界中への迅速かつコスト効率に優れた輸出物流を実現いたします。</p>
-</div>
-</div>
-</div>
+ <div class="about-row">
+ <div>
+ <img src="images/about-factory.jpg" alt="bag factory">
+ </div>
+ <div>
+ <h2 class="en">About Us</h2>
+ <h2 class="jp">会社概要</h2>
+ <div class="about-list">
+ <p class="en">• Huizhou Jiuheng Leather Co., Ltd. is a professional ODM/OEM handbag manufacturer with over 20 years of production experience, offering customized solutions from product development to mass production.</p>
+ <p class="jp">• 恵州久恒皮革有限公司（Huizhou Jiuheng Leather Co., Ltd.）は、20年以上の製造実績を誇るハンドバッグのODM/OEM専門メーカーです。デザイン開発・試作から量産、グローバル出荷まで、一気通貫のソリューションをご提供いたします。</p>
+ <p class="en">• Originally established in 2001 as Qiaofa Handbag Factory, the company rebranded to Huizhou Jiuheng Leather in 2025 to reflect its expanded capabilities and commitment to serving international brands at scale.</p>
+ <p class="jp">• 2001年に「橋発ハンドバッグ工場」として創業し、2025年に「恵州久恒皮革有限公司」へ社名変更いたしました。製造能力の拡大と、国際ブランドへの大規模供給体制へのコミットメントを示すものです。</p>
+ <p class="en">• Our production lines handle diverse materials — including genuine leather, PU/PVC, nylon, polyester, cotton canvas, and specialty fabrics — enabling us to meet varied brand positioning.</p>
+ <p class="jp">• 本革、PU・PVC、ナイロン、ポリエステル、コットンキャンバス、特殊素材など多様な素材の加工に対応し、ミッドマーケットからプレミアムラインまで幅広いブランドポジショニングにお応えいたします。</p>
+ <p class="en">• Located in Huizhou, Guangdong, our facility is approximately 1 hour from Shenzhen Port and 1.5 hours from Hong Kong Port, ensuring fast, cost-efficient export logistics to global destinations.</p>
+ <p class="jp">• 広東省恵州市の当社工場は深圳港から約1時間、香港港から約1.5時間と好立地にあり、世界中への迅速かつコスト効率に優れた輸出物流を実現いたします。</p>
+ </div>
+ </div>
+ </div>
 </div>
 <div id="product" class="page-block">
-<div class="product-layout">
-<aside class="sidebar">
-<h4 class="en">Check By</h4>
-<h4 class="jp">カテゴリ</h4>
-<ul>
-<li onclick="filterCat('all')">
-<span class="en">All</span>
-<span class="jp">すべて</span>
-</li>
-<li onclick="filterCat('backpack')">
-<span class="en">Backpack Bag</span>
-<span class="jp">バックパック</span>
-</li>
-<li onclick="filterCat('tote')">
-<span class="en">Tote Bag</span>
-<span class="jp">トートバッグ</span>
-</li>
-<li onclick="filterCat('crossbody')">
-<span class="en">Crossbody Bag</span>
-<span class="jp">クロスボディバッグ</span>
-</li>
-<li onclick="filterCat('shoulder')">
-<span class="en">Shoulder Bag</span>
-<span class="jp">ショルダーバッグ</span>
-</li>
-<li onclick="filterCat('travel')">
-<span class="en">Travel Goods</span>
-<span class="jp">トラベルグッズ</span>
-</li>
-<li onclick="filterCat('stationery')">
-<span class="en">Stationery Case</span>
-<span class="jp">ステーショナリーケース</span>
-</li>
-</ul>
-</aside>
-<div class="grid-wrap">
-<!-- Crossbody Bag Style A -->
-<div class="item-card" data-cat="crossbody" data-img="images/crossbody-a-01.jpg" data-name="Crossbody Bag Style A"
-data-en-info="Product Details<br>A slim crossbody bag with a top zipper closure and a wide adjustable strap.<br>Interior: 3 card slots, a zipper pocket.<br>Dimensions: 8”L x 8 ¾”H x 1 ¼”D<br>Adjustable Shoulder Strap: 21 ½”-24 ½”"
-data-jp-info="製品詳細<br>スリムなクロスボディバッグ、上部ジップ開閉、幅広調整可能ストラップ付き。<br>内装：カードスロット3か所、ジップポケット1か所。<br>サイズ：幅8インチ × 高さ8 ¾インチ × マチ1 ¼インチ<br>調整可能ショルダーストラップ：21 ½～24 ½インチ">
-<img src="images/crossbody-a-01.jpg" alt="Crossbody Bag Style A" onclick="openLightbox(this)">
-<p>Crossbody Bag Style A</p>
-</div>
-<!-- Crossbody Bag Style B -->
-<div class="item-card" data-cat="crossbody" data-img="images/crossbody-b-01.jpg" data-name="Crossbody Bag Style B"
-data-en-info="Product Details<br>A crescent-shaped crossbody bag with a top zipper closure, an adjustable strap, and a zippered pocket at back exterior.<br>Interior: 3 card slots, a zipper pocket.<br>Dimensions: 10 ¾”L x 6 ¾”H at center x 3 3/8”D<br>Adjustable Strap Drop: 21 ½”-24 ½”"
-data-jp-info="製品詳細<br>三日月型クロスボディバッグ、上部ジップ開閉、調整ストラップ付き、背面にジップポケット。<br>内装：カードスロット3か所、ジップポケット1か所。<br>サイズ：幅10 ¾インチ × 中央高さ6 ¾インチ × マチ3 3/8インチ<br>調整ストラップドロップ：21 ½～24 ½インチ">
-<img src="images/crossbody-b-01.jpg" alt="Crossbody Bag Style B" onclick="openLightbox(this)">
-<p>Crossbody Bag Style B</p>
-</div>
-<!-- Backpack Bag Style A -->
-<div class="item-card" data-cat="backpack" data-img="images/backpack-a-01.jpg" data-name="Backpack Bag Style A"
-data-en-info="Product Details<br>Backpack with top zipper closure. Adjustable webbing straps. Side pockets and front zipper pocket. Fits a 13” laptop.<br>Interior: Zipper pocket, smartphone pocket.<br>Dimensions: 10” L x 14” H x 5.75” D<br>Adjustable Shoulder Straps: 17”-35”<br>Handle Drop: 3”"
-data-jp-info="製品詳細<br>上部ジップ開閉のバックパック。調整可能なウェビングストラップ、サイドポケット、フロントジップポケット付き。13インチPC対応。<br>内装：ジップポケット、スマホポケット。<br>サイズ：幅10インチ × 高さ14インチ × マチ5.75インチ<br>調整ショルダーストラップ：17～35インチ<br>ハンドルドロップ：3インチ">
-<img src="images/backpack-a-01.jpg" alt="Backpack Bag Style A" onclick="openLightbox(this)">
-<p>Backpack Bag Style A</p>
-</div>
-<!-- Backpack Bag Style B -->
-<div class="item-card" data-cat="backpack" data-img="images/backpack-b-01.jpg" data-name="Backpack Bag Style B"
-data-en-info="Product Details<br>Small backpack with adjustable shoulder straps, top handle to hand-carry, main compartment with zipper closure, and front zipper pocket.<br>Interior: Zipper pocket, smartphone pocket, logo-embossed Theme patch.<br>Dimensions: 11.25”H x 8”L x 4”D.<br>Handle Drop: 1.25\"."
-data-jp-info="製品詳細<br>小型バックパック、調整ショルダーストラップ、手持ち用トップハンドル、メインルームジップ開閉、フロントジップポケット付き。<br>内装：ジップポケット、スマホポケット、ロゴエンボスパッチ。<br>サイズ：高さ11.25インチ × 幅8インチ × マチ4インチ<br>ハンドルドロップ：1.25インチ">
-<img src="images/backpack-b-01.jpg" alt="Backpack Bag Style B" onclick="openLightbox(this)">
-<p>Backpack Bag Style B</p>
-</div>
-<!-- Shoulder Bag Style A -->
-<div class="item-card" data-cat="shoulder" data-img="images/shoulder-a-01.jpg" data-name="Shoulder Bag Style A"
-data-en-info="Product Details<br>A slim, slouchy shoulder bag with a hidden top zipper closure and two handles.<br>Interior: 3 card slots, a zipper pocket, and logo-embossed patch.<br>Dimensions: 17 ½”L x 8”H at center.<br>Handle Drop: 12” (when slouched)"
-data-jp-info="製品詳細<br>スリムでゆったりとしたショルダーバッグ、隠し式上部ジップ開閉、2本ハンドル付き。<br>内装：カードスロット3か所、ジップポケット、ロゴエンボスパッチ。<br>サイズ：幅17 ½インチ × 中央高さ8インチ<br>ハンドルドロップ：12インチ（ゆったり状態時）">
-<img src="images/shoulder-a-01.jpg" alt="Shoulder Bag Style A" onclick="openLightbox(this)">
-<p>Shoulder Bag Style A</p>
-</div>
-<!-- Shoulder Bag Style B -->
-<div class="item-card" data-cat="shoulder" data-img="images/shoulder-b-01.jpg" data-name="Shoulder Bag Style B"
-data-en-info="Product Details<br>A slim asymmetrical shoulder bag with a zipper closure, with rings and buckle details at strap.<br>Interior: 2 card slots, a zipper pocket, and logo-embossed patch.<br>Dimensions: 11 1/2”L x 7”H x 1 1/2”D<br>Strap Drop: 10”"
-data-jp-info="製品詳細<br>スリムな非対称ショルダーバッグ、ジップ開閉、ストラップにリングとバックルデザイン。<br>内装：カードスロット2か所、ジップポケット、ロゴエンボスパッチ。<br>サイズ：幅11 1/2インチ × 高さ7インチ × マチ1 1/2インチ<br>ストラップドロップ：10インチ">
-<img src="images/shoulder-b-01.jpg" alt="Shoulder Bag Style B" onclick="openLightbox(this)">
-<p>Shoulder Bag Style B</p>
-</div>
-<!-- Tote Bag A -->
-<div class="item-card" data-cat="tote" data-img="images/tote-a-01.jpg" data-name="Tote Bag Style A"
-data-en-info="Material: PU leather<br>Size: L40 × H32 × D12 cm<br>Custom Logo: Deboss / Print / Embroidery available"
-data-jp-info="素材：PUレザー<br>サイズ：L40 × H32 × D10 cm<br>ロゴ：箔押し、プリント、刺繍対応">
-<img src="images/tote-a-01.jpg" alt="Tote Bag Style A" onclick="openLightbox(this)">
-<p>Tote Bag Style A</p>
-</div>
-<!-- Tote Bag B -->
-<div class="item-card" data-cat="tote" data-img="images/tote-b-01.jpg" data-name="Tote Bag Style B"
-data-en-info="Material: PU leather<br>Size: L36 × H28 × D10 cm<br>Custom Logo: Deboss / Print / Metal logo available"
-data-jp-info="素材：PUレザー<br>サイズ：L36 × H28 × D10 cm<br>ロゴ：箔押し、プリント、メタルロゴ対応">
-<img src="images/tote-b-01.jpg" alt="Tote Bag Style B" onclick="openLightbox(this)">
-<p>Tote Bag Style B</p>
-</div>
-</div>
-</div>
+ <div class="product-layout">
+ <aside class="sidebar">
+ <h4 class="en">Check By</h4>
+ <h4 class="jp">カテゴリ</h4>
+ <ul>
+ <li onclick="filterCat('all')">
+ <span class="en">All</span>
+ <span class="jp">すべて</span>
+ </li>
+ <li onclick="filterCat('backpack')">
+ <span class="en">Backpack Bag</span>
+ <span class="jp">バックパック</span>
+ </li>
+ <li onclick="filterCat('tote')">
+ <span class="en">Tote Bag</span>
+ <span class="jp">トートバッグ</span>
+ </li>
+ <li onclick="filterCat('crossbody')">
+ <span class="en">Crossbody Bag</span>
+ <span class="jp">クロスボディバッグ</span>
+ </li>
+ <li onclick="filterCat('shoulder')">
+ <span class="en">Shoulder Bag</span>
+ <span class="jp">ショルダーバッグ</span>
+ </li>
+ <li onclick="filterCat('travel')">
+ <span class="en">Travel Goods</span>
+ <span class="jp">トラベルグッズ</span>
+ </li>
+ <li onclick="filterCat('stationery')">
+ <span class="en">Stationery Case</span>
+ <span class="jp">ステーショナリーケース</span>
+ </li>
+ </ul>
+ </aside>
+ <div class="grid-wrap">
+ <!-- Crossbody Bag Style A -->
+ <div class="item-card" data-cat="crossbody" data-img="images/crossbody-a-01.jpg" data-name="Crossbody Bag Style A" data-en-info="Product Details<br>A slim crossbody bag with a top zipper closure and a wide adjustable strap.<br>Interior: 3 card slots, a zipper pocket.<br>Dimensions: 8”L x 8 ¾”H x 1 ¼”D<br>Adjustable Shoulder Strap: 21 ½”-24 ½”" data-jp-info="製品詳細<br>スリムなクロスボディバッグ、上部ジップ開閉、幅広調整可能ストラップ付き。<br>内装：カードスロット3か所、ジップポケット1か所。<br>サイズ：幅8インチ × 高さ8 ¾インチ × マチ1 ¼インチ<br>調整可能ショルダーストラップ：21 ½～24 ½インチ">
+ <img src="images/crossbody-a-01.jpg" alt="Crossbody Bag Style A" onclick="openLightbox(this)">
+ <p>Crossbody Bag Style A</p>
+ </div>
+ <!-- Crossbody Bag Style B -->
+ <div class="item-card" data-cat="crossbody" data-img="images/crossbody-b-01.jpg" data-name="Crossbody Bag Style B" data-en-info="Product Details<br>A crescent-shaped crossbody bag with a top zipper closure, an adjustable strap, and a zippered pocket at back exterior.<br>Interior: 3 card slots, a zipper pocket.<br>Dimensions: 10 ¾”L x 6 ¾”H at center x 3 3/8”D<br>Adjustable Strap Drop: 21 ½”-24 ½”" data-jp-info="製品詳細<br>三日月型クロスボディバッグ、上部ジップ開閉、調整ストラップ付き、背面にジップポケット。<br>内装：カードスロット3か所、ジップポケット1か所。<br>サイズ：幅10 ¾インチ × 中央高さ6 ¾インチ × マチ3 3/8インチ<br>調整ストラップドロップ：21 ½～24 ½インチ">
+ <img src="images/crossbody-b-01.jpg" alt="Crossbody Bag Style B" onclick="openLightbox(this)">
+ <p>Crossbody Bag Style B</p>
+ </div>
+ <!-- Backpack Bag Style A -->
+ <div class="item-card" data-cat="backpack" data-img="images/backpack-a-01.jpg" data-name="Backpack Bag Style A" data-en-info="Product Details<br>Backpack with top zipper closure. Adjustable webbing straps. Side pockets and front zipper pocket. Fits a 13” laptop.<br>Interior: Zipper pocket, smartphone pocket.<br>Dimensions: 10” L x 14” H x 5.75” D<br>Adjustable Shoulder Straps: 17”-35”<br>Handle Drop: 3”" data-jp-info="製品詳細<br>上部ジップ開閉のバックパック。調整可能なウェビングストラップ、サイドポケット、フロントジップポケット付き。13インチPC対応。<br>内装：ジップポケット、スマホポケット。<br>サイズ：幅10インチ × 高さ14インチ × マチ5.75インチ<br>調整ショルダーストラップ：17～35インチ<br>ハンドルドロップ：3インチ">
+ <img src="images/backpack-a-01.jpg" alt="Backpack Bag Style A" onclick="openLightbox(this)">
+ <p>Backpack Bag Style A</p>
+ </div>
+ <!-- Backpack Bag Style B -->
+ <div class="item-card" data-cat="backpack" data-img="images/backpack-b-01.jpg" data-name="Backpack Bag Style B" data-en-info="Product Details<br>Small backpack with adjustable shoulder straps, top handle to hand-carry, main compartment with zipper closure, and front zipper pocket.<br>Interior: Zipper pocket, smartphone pocket, logo-embossed Theme patch.<br>Dimensions: 11.25”H x 8”L x 4”D.<br>Handle Drop: 1.25\"." data-jp-info="製品詳細<br>小型バックパック、調整ショルダーストラップ、手持ち用トップハンドル、メインルームジップ開閉、フロントジップポケット付き。<br>内装：ジップポケット、スマホポケット、ロゴエンボスパッチ。<br>サイズ：高さ11.25インチ × 幅8インチ × マチ4インチ<br>ハンドルドロップ：1.25インチ">
+ <img src="images/backpack-b-01.jpg" alt="Backpack Bag Style B" onclick="openLightbox(this)">
+ <p>Backpack Bag Style B</p>
+ </div>
+ <!-- Shoulder Bag Style A -->
+ <div class="item-card" data-cat="shoulder" data-img="images/shoulder-a-01.jpg" data-name="Shoulder Bag Style A" data-en-info="Product Details<br>A slim, slouchy shoulder bag with a hidden top zipper closure and two handles.<br>Interior: 3 card slots, a zipper pocket, and logo-embossed patch.<br>Dimensions: 17 ½”L x 8”H at center.<br>Handle Drop: 12” (when slouched)" data-jp-info="製品詳細<br>スリムでゆったりとしたショルダーバッグ、隠し式上部ジップ開閉、2本ハンドル付き。<br>内装：カードスロット3か所、ジップポケット、ロゴエンボスパッチ。<br>サイズ：幅17 ½インチ × 中央高さ8インチ<br>ハンドルドロップ：12インチ（ゆったり状態時）">
+ <img src="images/shoulder-a-01.jpg" alt="Shoulder Bag Style A" onclick="openLightbox(this)">
+ <p>Shoulder Bag Style A</p>
+ </div>
+ <!-- Shoulder Bag Style B -->
+ <div class="item-card" data-cat="shoulder" data-img="images/shoulder-b-01.jpg" data-name="Shoulder Bag Style B" data-en-info="Product Details<br>A slim asymmetrical shoulder bag with a zipper closure, with rings and buckle details at strap.<br>Interior: 2 card slots, a zipper pocket, and logo-embossed patch.<br>Dimensions: 11 1/2”L x 7”H x 1 1/2”D<br>Strap Drop: 10”" data-jp-info="製品詳細<br>スリムな非対称ショルダーバッグ、ジップ開閉、ストラップにリングとバックルデザイン。<br>内装：カードスロット2か所、ジップポケット、ロゴエンボスパッチ。<br>サイズ：幅11 1/2インチ × 高さ7インチ × マチ1 1/2インチ<br>ストラップドロップ：10インチ">
+ <img src="images/shoulder-b-01.jpg" alt="Shoulder Bag Style B" onclick="openLightbox(this)">
+ <p>Shoulder Bag Style B</p>
+ </div>
+ <!-- Tote Bag A -->
+ <div class="item-card" data-cat="tote" data-img="images/tote-a-01.jpg" data-name="Tote Bag Style A" data-en-info="Material: PU leather<br>Size: L40 × H32 × D12 cm<br>Custom Logo: Deboss / Print / Embroidery available" data-jp-info="素材：PUレザー<br>サイズ：L40 × H32 × D10 cm<br>ロゴ：箔押し、プリント、刺繍対応">
+ <img src="images/tote-a-01.jpg" alt="Tote Bag Style A" onclick="openLightbox(this)">
+ <p>Tote Bag Style A</p>
+ </div>
+ <!-- Tote Bag B -->
+ <div class="item-card" data-cat="tote" data-img="images/tote-b-01.jpg" data-name="Tote Bag Style B" data-en-info="Material: PU leather<br>Size: L36 × H28 × D10 cm<br>Custom Logo: Deboss / Print / Metal logo available" data-jp-info="素材：PUレザー<br>サイズ：L36 × H28 × D10 cm<br>ロゴ：箔押し、プリント、メタルロゴ対応">
+ <img src="images/tote-b-01.jpg" alt="Tote Bag Style B" onclick="openLightbox(this)">
+ <p>Tote Bag Style B</p>
+ </div>
+  <!-- Travel Goods: Neck Pillow Style A -->
+ <div class="item-card" data-cat="travel" data-img="images/neck pillow-a-01.jpg" data-name="Neck Pillow Style A" data-en-info="Product Details<br>A comfortable neck pillow designed to fit around the neck.<br>Material: Cover / Polyester &nbsp;&nbsp;Body / Polyurethane<br>Dimensions : Approximately 22 cm (H) × 20 cm (W) × 9.5 cm (D)" data-jp-info="製品詳細<br>首にフィットする快適なネックピローです。<br>素材：カバー／ポリエステル　本体／ポリウレタン<br>サイズ：約 22 cm (高) × 20 cm (幅) × 9.5 cm (マチ)">
+ <img src="images/neck pillow-a-01.jpg" alt="Neck Pillow Style A" onclick="openLightbox(this)">
+ <p>Neck Pillow Style A</p>
+ </div>
+ <!-- Travel Goods: Neck Pillow Style B -->
+ <div class="item-card" data-cat="travel" data-img="images/neck pillow-b-01.jpg" data-name="Neck Pillow Style B" data-en-info="Product Details<br>Inflatable, with removable hood. The cover can be removed and machine-washed. It comes with a convenient carrying pouch for easy transport.<br>Material: Cover / Cotton; Body / TPU<br>Dimensions : 30 cm (H) × 31 cm (W) × 12.5 cm (D)" data-jp-info="製品詳細<br>空気注入式、取り外し可能なフード付き。カバーは取り外して洗濯機洗い可能。携帯用ポーチ付きで持ち運びに便利です。<br>素材：カバー／コットン；本体／TPU<br>サイズ：30 cm (高) × 31 cm (幅) × 12.5 cm (マチ)">
+ <img src="images/neck pillow-b-01.jpg" alt="Neck Pillow Style B" onclick="openLightbox(this)">
+ <p>Neck Pillow Style B</p>
+ </div>
+ <!-- Travel Goods: Sleep Eye Mask Style A -->
+ <div class="item-card" data-cat="travel" data-img="images/eye mask-a-01.jpg" data-name="Sleep Eye Mask Style A" data-en-info="Product Details<br>Minimal pressure on eyes during use, 3D-designed eye mask. Eyebrow makeup is also safe.<br>Material: Polyester, Polyurethane<br>Dimensions: 8.5 cm (H) × 22 cm (W) × 2 cm (D)" data-jp-info="製品詳細<br>3D設計で目への圧迫が少ないアイマスク。眉メイクが崩れにくい仕様です。<br>素材：ポリエステル、ポリウレタン<br>サイズ：8.5 cm (高) × 22 cm (幅) × 2 cm (マチ)">
+ <img src="images/eye mask-a-01.jpg" alt="Sleep Eye Mask Style A" onclick="openLightbox(this)">
+ <p>Sleep Eye Mask Style A</p>
+ </div>
+ <!-- Travel Goods: Travel Storage Pouch Style A -->
+ <div class="item-card" data-cat="travel" data-img="images/storage pouch-a-01.jpg" data-name="Travel Storage Pouch Style A" data-en-info="Product Details<br>A neck strap pouch for organizing and storing cash or passports. Features a clear pocket on the back for easy access to your smartphone.<br>Materials: Nylon, Polyester, Polycarbonate<br>Dimensions: 95 mm (H) × 125 mm (W) × 10 mm (D)" data-jp-info="製品詳細<br>首掛けタイプのポーチで現金やパスポートを収納できます。背面にクリアポケットがあり、スマホを簡単に取り出せます。<br>素材：ナイロン、ポリエステル、ポリカーボネート<br>サイズ：95 mm (高) × 125 mm (幅) × 10 mm (マチ)">
+ <img src="images/storage pouch-a-01.jpg" alt="Travel Storage Pouch Style A" onclick="openLightbox(this)">
+ <p>Travel Storage Pouch Style A</p>
+ </div>
+ <!-- Travel Goods: Waist Bag Style A -->
+ <div class="item-card" data-cat="travel" data-img="images/waist bag-a-01.jpg" data-name="Waist Bag Style A" data-en-info="Product Details<br>Can be used as a pouch by removing the strap. The body is made of soft mesh material.<br>Material: Nylon or Polyester<br>Dimensions: 135mm (L) × 250mm (W)" data-jp-info="製品詳細<br>ストラップを取り外すとポーチとしても使用可能。本体は柔らかいメッシュ素材です。<br>素材：ナイロンまたはポリエステル<br>サイズ：135mm (幅) × 250mm (高)">
+ <img src="images/waist bag-a-01.jpg" alt="Waist Bag Style A" onclick="openLightbox(this)">
+ <p>Waist Bag Style A</p>
+ </div>
+ <!-- Travel Goods: Leather Name Tag Style A -->
+ <div class="item-card" data-cat="travel" data-img="images/name tag-a-01.jpg" data-name="Leather Name Tag Style A" data-en-info="Product Details<br>Name tag with flap for hiding names.<br>Material: Split leather<br>Dimensions: 95mm x 70mm (excluding belt)" data-jp-info="製品詳細<br>名前を隠せるフラップ付きネームタグです。<br>素材：スプリットレザー<br>サイズ：95mm × 70mm（ベルト部分除く）">
+ <img src="images/name tag-a-01.jpg" alt="Leather Name Tag Style A" onclick="openLightbox(this)">
+ <p>Leather Name Tag Style A</p>
+ </div>
+ </div>
+ </div>
 </div>
 <div id="contact" class="page-block">
-<h2 class="en">Contact Us</h2>
-<h2 class="jp">お問い合わせ</h2>
-<p class="en">Huizhou Jiuheng Leather Co., Ltd.</p>
-<p class="jp">恵州久恒皮革有限公司</p>
-<p class="en">No. 92, Yonglian Group, Gonglian Village, Huicheng District, Huizhou, Guangdong,China</p>
-<p class="jp">中国 広東省 恵州市 恵城区 龙丰街道共联村永联小组92号</p>
-<p class="en">Tel: +86-752-2372-839</p>
-<p class="jp">Tel: +86-752-2372-839</p>
-<p class="en">Email: info@jhbag.com.cn</p>
-<p class="jp">Email: info@jhbag.com.cn</p>
-<p class="en">Website : www.jhbag.com.cn</p>
-<p class="jp">Website : www.jhbag.com.cn</p>
+ <h2 class="en">Contact Us</h2>
+ <h2 class="jp">お問い合わせ</h2>
+ <p class="en">Huizhou Jiuheng Leather Co., Ltd.</p>
+ <p class="jp">恵州久恒皮革有限公司</p>
+ <p class="en">No. 92, Yonglian Group, Gonglian Village, Huicheng District, Huizhou, Guangdong,China</p>
+ <p class="jp">中国 広東省 恵州市 恵城区 龙丰街道共联村永联小组92号</p>
+ <p class="en">Tel: +86-752-2372-839</p>
+ <p class="jp">Tel: +86-752-2372-839</p>
+ <p class="en">Email: info@jhbag.com.cn</p>
+ <p class="jp">Email: info@jhbag.com.cn</p>
+ <p class="en">Website : www.jhbag.com.cn</p>
+ <p class="jp">Website : www.jhbag.com.cn</p>
 </div>
 <div class="lightbox" id="lightbox">
-<div class="lightbox-content">
-<span class="close">&times;</span>
-<div class="lb-row">
-<div>
-<img class="lb-img" id="lbImg" src="" alt="preview">
-</div>
-<div class="lb-info">
-<h3 id="lbName"></h3>
-<div id="lbText"></div>
-</div>
-</div>
-</div>
+ <div class="lightbox-content">
+ <span class="close">&times;</span>
+ <div class="lb-row">
+ <div>
+ <img class="lb-img" id="lbImg" src="" alt="preview">
+ </div>
+ <div class="lb-info">
+ <h3 id="lbName"></h3>
+ <div id="lbText"></div>
+ </div>
+ </div>
+ </div>
 </div>
 <script>
 let currentLang = 'en';
 function switchPage(id){
-document.querySelectorAll('.page-block').forEach(el=>el.classList.remove('active'))
-document.getElementById(id).classList.add('active')
+ document.querySelectorAll('.page-block').forEach(el=>el.classList.remove('active'))
+ document.getElementById(id).classList.add('active')
 }
 function setLang(lang){
-currentLang = lang;
-// 切换导航文字
-document.querySelectorAll('nav a').forEach(link=>{
-link.innerText = lang === 'jp' ? link.dataset.jp : link.dataset.en;
-})
-if(lang=='en'){
-document.querySelectorAll('.jp').forEach(el=>el.style.display='none')
-document.querySelectorAll('.en').forEach(el=>el.style.display='block')
-}else{
-document.querySelectorAll('.en').forEach(el=>el.style.display='none')
-document.querySelectorAll('.jp').forEach(el=>el.style.display='block')
-}
+ currentLang = lang;
+ // 切换导航文字
+ document.querySelectorAll('nav a').forEach(link=>{
+ link.innerText = lang === 'jp' ? link.dataset.jp : link.dataset.en;
+ })
+ if(lang=='en'){
+ document.querySelectorAll('.jp').forEach(el=>el.style.display='none')
+ document.querySelectorAll('.en').forEach(el=>el.style.display='block')
+ }else{
+ document.querySelectorAll('.en').forEach(el=>el.style.display='none')
+ document.querySelectorAll('.jp').forEach(el=>el.style.display='block')
+ }
 }
 setLang('en');
 function filterCat(catName){
-const cards=document.querySelectorAll('.item-card')
-cards.forEach(card=>{
-if(catName==='all' || card.dataset.cat===catName){
-card.style.display='block'
-}else{
-card.style.display='none'
-}
-})
+ const cards=document.querySelectorAll('.item-card')
+ cards.forEach(card=>{
+ if(catName==='all' || card.dataset.cat===catName){
+ card.style.display='block'
+ }else{
+ card.style.display='none'
+ }
+ })
 }
 const lb = document.getElementById('lightbox');
 const lbImg = document.getElementById('lbImg');
 const lbName = document.getElementById('lbName');
 const lbText = document.getElementById('lbText');
 function openLightbox(imgEl){
-const card = imgEl.closest('.item-card');
-lbImg.src = card.dataset.img;
-lbName.innerText = card.dataset.name;
-if(currentLang === 'en'){
-lbText.innerHTML = card.dataset.enInfo;
-}else{
-lbText.innerHTML = card.dataset.jpInfo;
-}
-lb.classList.add('show');
+ const card = imgEl.closest('.item-card');
+ lbImg.src = card.dataset.img;
+ lbName.innerText = card.dataset.name;
+ if(currentLang === 'en'){
+ lbText.innerHTML = card.dataset.enInfo;
+ }else{
+ lbText.innerHTML = card.dataset.jpInfo;
+ }
+ lb.classList.add('show');
 }
 function closeLightbox(){
-lb.classList.remove('show');
+ lb.classList.remove('show');
 }
 document.querySelector('.close').onclick = closeLightbox;
 lb.onclick = function(e){
-if(e.target === lb) closeLightbox();
+ if(e.target === lb) closeLightbox();
 }
 </script>
 <footer>
-© 2026 JHBAG. All rights reserved. <a href="https://jhbag.com.cn">jhbag.com.cn</a>
+ © 2026 JHBAG. All rights reserved. <a href="https://jhbag.com.cn">jhbag.com.cn</a>
 </footer>
 </body>
 </html>
